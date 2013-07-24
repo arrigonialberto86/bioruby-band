@@ -12,7 +12,7 @@ it from Brew
 If you want to use 'bio-band' APIs without installing the gem you need
 to run command 'rake -T' once before requiring the gem in your script
 (this is necessary for jbundler to download the '.jar' files and subsequently
-set the Java classpath)
+set the Java classpath).
 Otherwise use:
 
         gem install bio-band
@@ -38,7 +38,7 @@ The BioRuby community is on IRC server: irc.freenode.org, channel: #bioruby.
 
 == Cite
 
-  If you use this software, please cite one of
+If you use this software, please cite one of
  
 * [BioRuby: bioinformatics software for the Ruby programming language](http://dx.doi.org/10.1093/bioinformatics/btq475)
 * [Biogem: an effective tool-based approach for scaling up open source software development in bioinformatics](http://dx.doi.org/10.1093/bioinformatics/bts080)

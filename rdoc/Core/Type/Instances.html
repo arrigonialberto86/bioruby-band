@@ -1,0 +1,1260 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>class Core::Type::Instances - ruby-mining 0.1.0</title>
+
+<link type="text/css" media="screen" href="../../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../../";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="../../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/darkfish.js"></script>
+
+
+<body id="top" class="class">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="../../index.html">Home</a>
+    <a href="../../table_of_contents.html#classes">Classes</a>
+    <a href="../../table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/ruby_mining/core/type/instances.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    <nav id="parent-class-section" class="section">
+  <h3 class="section-header">Parent</h3>
+  
+  <p class="link">Object
+  
+</nav>
+
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-c-att">::att</a>
+    
+    <li><a href="#method-c-date">::date</a>
+    
+    <li><a href="#method-c-nominal">::nominal</a>
+    
+    <li><a href="#method-c-numeric">::numeric</a>
+    
+    <li><a href="#method-c-string">::string</a>
+    
+    <li><a href="#method-i-add_instance">#add_instance</a>
+    
+    <li><a href="#method-i-add_nominal_attribute">#add_nominal_attribute</a>
+    
+    <li><a href="#method-i-add_numeric_attribute">#add_numeric_attribute</a>
+    
+    <li><a href="#method-i-check_array">#check_array</a>
+    
+    <li><a href="#method-i-check_numeric_instance">#check_numeric_instance</a>
+    
+    <li><a href="#method-i-dim">#dim</a>
+    
+    <li><a href="#method-i-mean">#mean</a>
+    
+    <li><a href="#method-i-merge_with">#merge_with</a>
+    
+    <li><a href="#method-i-n_columns">#n_columns</a>
+    
+    <li><a href="#method-i-n_rows">#n_rows</a>
+    
+    <li><a href="#method-i-populate_by_row">#populate_by_row</a>
+    
+    <li><a href="#method-i-return_attr_data">#return_attr_data</a>
+    
+    <li><a href="#method-i-summary">#summary</a>
+    
+    <li><a href="#method-i-to_ARFF">#to_ARFF</a>
+    
+    <li><a href="#method-i-to_Apache_matrix">#to_Apache_matrix</a>
+    
+    <li><a href="#method-i-to_Apache_matrix_block">#to_Apache_matrix_block</a>
+    
+    <li><a href="#method-i-to_CSV">#to_CSV</a>
+    
+    <li><a href="#method-i-to_a2d">#to_a2d</a>
+    
+    <li><a href="#method-i-variance">#variance</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="../../README_rdoc.html">README</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../../Weka.html">Weka</a>
+  
+    <li><a href="../../Weka/Classifier.html">Weka::Classifier</a>
+  
+    <li><a href="../../Weka/Classifier/Bayes.html">Weka::Classifier::Bayes</a>
+  
+    <li><a href="../../Weka/Classifier/Bayes/AODE.html">Weka::Classifier::Bayes::AODE</a>
+  
+    <li><a href="../../Weka/Classifier/Bayes/AODE/Base.html">Weka::Classifier::Bayes::AODE::Base</a>
+  
+    <li><a href="../../Weka/Classifier/Bayes/BayesianLogisticRegression.html">Weka::Classifier::Bayes::BayesianLogisticRegression</a>
+  
+    <li><a href="../../Weka/Classifier/Bayes/BayesianLogisticRegression/Base.html">Weka::Classifier::Bayes::BayesianLogisticRegression::Base</a>
+  
+    <li><a href="../../Weka/Classifier/Bayes/ComplementNaiveBayes.html">Weka::Classifier::Bayes::ComplementNaiveBayes</a>
+  
+    <li><a href="../../Weka/Classifier/Bayes/ComplementNaiveBayes/Base.html">Weka::Classifier::Bayes::ComplementNaiveBayes::Base</a>
+  
+    <li><a href="../../Weka/Classifier/Bayes/NaiveBayes.html">Weka::Classifier::Bayes::NaiveBayes</a>
+  
+    <li><a href="../../Weka/Classifier/Bayes/NaiveBayes/Base.html">Weka::Classifier::Bayes::NaiveBayes::Base</a>
+  
+    <li><a href="../../Weka/Classifier/Bayes/WAODE.html">Weka::Classifier::Bayes::WAODE</a>
+  
+    <li><a href="../../Weka/Classifier/Bayes/WAODE/Base.html">Weka::Classifier::Bayes::WAODE::Base</a>
+  
+    <li><a href="../../Weka/Classifier/Evaluation.html">Weka::Classifier::Evaluation</a>
+  
+    <li><a href="../../Weka/Db.html">Weka::Db</a>
+  
+    <li><a href="../../Weka/Filter.html">Weka::Filter</a>
+  
+    <li><a href="../../Weka/Filter/Supervised.html">Weka::Filter::Supervised</a>
+  
+    <li><a href="../../Weka/Filter/Supervised/Attribute.html">Weka::Filter::Supervised::Attribute</a>
+  
+    <li><a href="../../Weka/Filter/Supervised/Attribute/AttributeSelection.html">Weka::Filter::Supervised::Attribute::AttributeSelection</a>
+  
+    <li><a href="../../Weka/Filter/Supervised/Attribute/Discretize.html">Weka::Filter::Supervised::Attribute::Discretize</a>
+  
+    <li><a href="../../Weka/Filter/Supervised/Instance.html">Weka::Filter::Supervised::Instance</a>
+  
+    <li><a href="../../Weka/Filter/Unsupervised.html">Weka::Filter::Unsupervised</a>
+  
+    <li><a href="../../Weka/Filter/Unsupervised/Attribute.html">Weka::Filter::Unsupervised::Attribute</a>
+  
+    <li><a href="../../Weka/Filter/Unsupervised/Attribute/Add.html">Weka::Filter::Unsupervised::Attribute::Add</a>
+  
+    <li><a href="../../Weka/Filter/Unsupervised/Attribute/Center.html">Weka::Filter::Unsupervised::Attribute::Center</a>
+  
+    <li><a href="../../Weka/Filter/Unsupervised/Attribute/Discretize.html">Weka::Filter::Unsupervised::Attribute::Discretize</a>
+  
+    <li><a href="../../Weka/Filter/Unsupervised/Attribute/NominalToString.html">Weka::Filter::Unsupervised::Attribute::NominalToString</a>
+  
+    <li><a href="../../Weka/Filter/Unsupervised/Attribute/Normalize.html">Weka::Filter::Unsupervised::Attribute::Normalize</a>
+  
+    <li><a href="../../Weka/Filter/Unsupervised/Attribute/PrincipalComponents.html">Weka::Filter::Unsupervised::Attribute::PrincipalComponents</a>
+  
+    <li><a href="../../Weka/Filter/Unsupervised/Attribute/Remove.html">Weka::Filter::Unsupervised::Attribute::Remove</a>
+  
+    <li><a href="../../Weka/Filter/Unsupervised/Attribute/Standardize.html">Weka::Filter::Unsupervised::Attribute::Standardize</a>
+  
+    <li><a href="../../Weka/Filter/Unsupervised/Attribute/StringToWordVector.html">Weka::Filter::Unsupervised::Attribute::StringToWordVector</a>
+  
+    <li><a href="../../Weka/Filter/Unsupervised/Instance.html">Weka::Filter::Unsupervised::Instance</a>
+  
+    <li><a href="../../Weka/Filter/Unsupervised/Instance/NonSparseToSparse.html">Weka::Filter::Unsupervised::Instance::NonSparseToSparse</a>
+  
+    <li><a href="../../Weka/Filter/Unsupervised/Instance/Normalize.html">Weka::Filter::Unsupervised::Instance::Normalize</a>
+  
+    <li><a href="../../Weka/Filter/Unsupervised/Instance/RemoveRange.html">Weka::Filter::Unsupervised::Instance::RemoveRange</a>
+  
+    <li><a href="../../Weka/Filter/Unsupervised/Instance/RemoveWithValues.html">Weka::Filter::Unsupervised::Instance::RemoveWithValues</a>
+  
+    <li><a href="../../Weka/Filter/Unsupervised/Instance/SparseToNonSparse.html">Weka::Filter::Unsupervised::Instance::SparseToNonSparse</a>
+  
+    <li><a href="../../Weka/Filter/Unsupervised/Instance/SubsetByExpression.html">Weka::Filter::Unsupervised::Instance::SubsetByExpression</a>
+  
+    <li><a href="../../Core.html">Core</a>
+  
+    <li><a href="../../Core/Parser.html">Core::Parser</a>
+  
+    <li><a href="../../Core/Type.html">Core::Type</a>
+  
+    <li><a href="../../Core/Type/Apache_matrix.html">Core::Type::Apache_matrix</a>
+  
+    <li><a href="../../Core/Type/Apache_matrix_block.html">Core::Type::Apache_matrix_block</a>
+  
+    <li><a href="../../Core/Type/Attribute.html">Core::Type::Attribute</a>
+  
+    <li><a href="../../Core/Type/Instance.html">Core::Type::Instance</a>
+  
+    <li><a href="../../Core/Type/Instances.html">Core::Type::Instances</a>
+  
+    <li><a href="../../Core/Type/Instances/Base.html">Core::Type::Instances::Base</a>
+  
+    <li><a href="../../Core/Utils.html">Core::Utils</a>
+  
+    <li><a href="../../Apache.html">Apache</a>
+  
+    <li><a href="../../Apache/Stat.html">Apache::Stat</a>
+  
+    <li><a href="../../Apache/Stat/Inference.html">Apache::Stat::Inference</a>
+  
+    <li><a href="../../Apache/Stat/Inference/Chi_square.html">Apache::Stat::Inference::Chi_square</a>
+  
+    <li><a href="../../Apache/Stat/Inference/T_test.html">Apache::Stat::Inference::T_test</a>
+  
+    <li><a href="../../Bayes_utils.html">Bayes_utils</a>
+  
+    <li><a href="../../Bayes_utils/ClassMethods.html">Bayes_utils::ClassMethods</a>
+  
+    <li><a href="../../Array.html">Array</a>
+  
+    <li><a href="../../Supervised_Util.html">Supervised_Util</a>
+  
+    <li><a href="../../Unsupervised_Util.html">Unsupervised_Util</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="class">class Core::Type::Instances</h1>
+
+  <div id="description" class="description">
+    <ul><li>
+<p><strong>Description</strong>    :</p>
+</li></ul>
+
+<p>This is the main class from the <a href="../../Weka.html">Weka</a> package
+for data handling. It is essentially a matrix: each row is an instance of
+the ‘Instance’ class, while each column is an instance of the ‘Attribute’
+class The class ‘Instances’ is here extended to add custom functionalities</p>
+
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    <!-- Methods -->
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Class Methods</h3>
+
+    
+      <div id="method-c-att" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">att</span><span
+            class="method-args">(attr_type,name,*values)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>This method is used for attributes definition in uninitialized
+Instances-derived classes</p>
+          
+
+          
+          <div class="method-source-code" id="att-source">
+            <pre><span class="ruby-comment"># File lib/ruby_mining/core/type/instances.rb, line 261</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">att</span>(<span class="ruby-identifier">attr_type</span>,<span class="ruby-identifier">name</span>,*<span class="ruby-identifier">values</span>)
+  <span class="ruby-identifier">att</span> = <span class="ruby-constant">Core</span><span class="ruby-operator">::</span><span class="ruby-constant">Type</span>.<span class="ruby-identifier">create_numeric_attr</span>(<span class="ruby-identifier">name</span>.<span class="ruby-identifier">to_java</span>(<span class="ruby-value">:string</span>)) <span class="ruby-keyword">if</span> <span class="ruby-identifier">attr_type</span> <span class="ruby-operator">==</span> <span class="ruby-value">:numeric</span>
+  <span class="ruby-identifier">att</span> = <span class="ruby-constant">Core</span><span class="ruby-operator">::</span><span class="ruby-constant">Type</span>.<span class="ruby-identifier">create_nominal_attr</span>(<span class="ruby-identifier">name</span>.<span class="ruby-identifier">to_java</span>(<span class="ruby-value">:string</span>),<span class="ruby-identifier">values</span>[<span class="ruby-value">0</span>]) <span class="ruby-keyword">if</span> <span class="ruby-identifier">attr_type</span> <span class="ruby-operator">==</span> <span class="ruby-value">:nominal</span>
+  <span class="ruby-identifier">att</span> = <span class="ruby-constant">Core</span><span class="ruby-operator">::</span><span class="ruby-constant">Type</span>.<span class="ruby-identifier">create_date_attr</span>(<span class="ruby-identifier">name</span>.<span class="ruby-identifier">to_java</span>(<span class="ruby-value">:string</span>),<span class="ruby-identifier">values</span>[<span class="ruby-value">0</span>]) <span class="ruby-keyword">if</span> <span class="ruby-identifier">attr_type</span> <span class="ruby-operator">==</span> <span class="ruby-value">:date</span>
+  <span class="ruby-identifier">att</span> = <span class="ruby-identifier">att</span> = <span class="ruby-constant">Core</span><span class="ruby-operator">::</span><span class="ruby-constant">Type</span>.<span class="ruby-identifier">create_string_attr</span>(<span class="ruby-identifier">name</span>.<span class="ruby-identifier">to_java</span>(<span class="ruby-value">:string</span>)) <span class="ruby-keyword">if</span> <span class="ruby-identifier">attr_type</span> <span class="ruby-operator">==</span> <span class="ruby-value">:string</span>      
+  <span class="ruby-identifier">@@positions</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">att</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- att-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- att-method -->
+
+    
+      <div id="method-c-date" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">date</span><span
+            class="method-args">(name)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>This method is used for Date attributes definition in uninitialized
+Instances-derived classes</p>
+<ul><li>
+<p><strong>Args</strong>    :</p>
+<ul><li>
+<p><code>name</code> -&gt; <a href="Attribute.html">Attribute</a> name, a
+String</p>
+</li></ul>
+</li></ul>
+          
+
+          
+          <div class="method-source-code" id="date-source">
+            <pre><span class="ruby-comment"># File lib/ruby_mining/core/type/instances.rb, line 287</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">date</span>(<span class="ruby-identifier">name</span>)
+  <span class="ruby-identifier">att</span> <span class="ruby-value">:date</span>, <span class="ruby-identifier">name</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- date-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- date-method -->
+
+    
+      <div id="method-c-nominal" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">nominal</span><span
+            class="method-args">(name,values)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>This method is used for Nominal attributes definition in uninitialized
+Instances-derived classes</p>
+<ul><li>
+<p><strong>Args</strong>    :</p>
+<ul><li>
+<p><code>name</code> -&gt; <a href="Attribute.html">Attribute</a> name, a
+String</p>
+</li><li>
+<p><code>values</code> -&gt; An array of values for the nominal attribute</p>
+</li></ul>
+</li></ul>
+          
+
+          
+          <div class="method-source-code" id="nominal-source">
+            <pre><span class="ruby-comment"># File lib/ruby_mining/core/type/instances.rb, line 273</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">nominal</span>(<span class="ruby-identifier">name</span>,<span class="ruby-identifier">values</span>)
+  <span class="ruby-identifier">att</span> <span class="ruby-value">:nominal</span>, <span class="ruby-identifier">name</span>, <span class="ruby-identifier">values</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- nominal-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- nominal-method -->
+
+    
+      <div id="method-c-numeric" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">numeric</span><span
+            class="method-args">(name)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>This method is used for Numeric attributes definition in uninitialized
+Instances-derived classes</p>
+<ul><li>
+<p><strong>Args</strong>    :</p>
+<ul><li>
+<p><code>name</code> -&gt; <a href="Attribute.html">Attribute</a> name, a
+String</p>
+</li></ul>
+</li></ul>
+          
+
+          
+          <div class="method-source-code" id="numeric-source">
+            <pre><span class="ruby-comment"># File lib/ruby_mining/core/type/instances.rb, line 280</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">numeric</span>(<span class="ruby-identifier">name</span>)
+  <span class="ruby-identifier">att</span> <span class="ruby-value">:numeric</span>, <span class="ruby-identifier">name</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- numeric-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- numeric-method -->
+
+    
+      <div id="method-c-string" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">string</span><span
+            class="method-args">(name)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>This method is used for String attributes definition in uninitialized
+Instances-derived classes</p>
+<ul><li>
+<p><strong>Args</strong>    :</p>
+<ul><li>
+<p><code>name</code> -&gt; <a href="Attribute.html">Attribute</a> name, a
+String</p>
+</li></ul>
+</li></ul>
+          
+
+          
+          <div class="method-source-code" id="string-source">
+            <pre><span class="ruby-comment"># File lib/ruby_mining/core/type/instances.rb, line 294</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">string</span>(<span class="ruby-identifier">name</span>)
+  <span class="ruby-identifier">att</span> <span class="ruby-value">:string</span>, <span class="ruby-identifier">name</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- string-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- string-method -->
+
+    
+    </section><!-- public-class-method-details -->
+  
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-add_instance" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">add_instance</span><span
+            class="method-args">(instance)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>An <a href="Instance.html">Instance</a> instance object (one row) is
+inserted into the current <a href="Instances.html">Instances</a> object</p>
+<ul><li>
+<p><strong>Args</strong>    :</p>
+<ul><li>
+<p><code>instance</code> -&gt; an array of values of the correct data type
+(:nominal,:numeric,etc?)</p>
+</li></ul>
+</li></ul>
+          
+
+          
+          <div class="method-source-code" id="add_instance-source">
+            <pre><span class="ruby-comment"># File lib/ruby_mining/core/type/instances.rb, line 180</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">add_instance</span>(<span class="ruby-identifier">instance</span>)
+  <span class="ruby-identifier">data_ref</span>=<span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">instance</span>.<span class="ruby-identifier">each_with_index</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">attribute</span>,<span class="ruby-identifier">idx</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">data_ref</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">insert_attribute</span>(<span class="ruby-identifier">attribute</span>,<span class="ruby-identifier">idx</span>)
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">double_array</span> = <span class="ruby-identifier">data_ref</span>.<span class="ruby-identifier">to_java</span> <span class="ruby-value">:double</span>
+  <span class="ruby-identifier">single_row</span> = <span class="ruby-constant">Instance</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">1.0</span>, <span class="ruby-identifier">double_array</span>)
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">add</span>(<span class="ruby-identifier">single_row</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- add_instance-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- add_instance-method -->
+
+    
+      <div id="method-i-add_nominal_attribute" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">add_nominal_attribute</span><span
+            class="method-args">(attribute,list_values)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>An <a href="Attribute.html">Attribute</a> instance object is inserted into
+the current <a href="Instances.html">Instances</a> object</p>
+<ul><li>
+<p><strong>Args</strong>    :</p>
+<ul><li>
+<p><code>attribute_name</code> -&gt; A name for the new attribute</p>
+</li><li>
+<p><code>values</code> -&gt; RubyArray with nominal values</p>
+</li></ul>
+</li><li>
+<p><strong>WARNING</strong>    :</p>
+</li></ul>
+
+<p>This method only creates an empty attribute field</p>
+          
+
+          
+          <div class="method-source-code" id="add_nominal_attribute-source">
+            <pre><span class="ruby-comment"># File lib/ruby_mining/core/type/instances.rb, line 205</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">add_nominal_attribute</span>(<span class="ruby-identifier">attribute</span>,<span class="ruby-identifier">list_values</span>)
+  <span class="ruby-identifier">values</span> = <span class="ruby-constant">FastVector</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">list_values</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">val</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">values</span>.<span class="ruby-identifier">addElement</span>(<span class="ruby-identifier">val</span>)         
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">insertAttributeAt</span>(<span class="ruby-constant">Attribute</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">attribute</span>, <span class="ruby-identifier">values</span>), <span class="ruby-keyword">self</span>.<span class="ruby-identifier">numAttributes</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- add_nominal_attribute-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- add_nominal_attribute-method -->
+
+    
+      <div id="method-i-add_numeric_attribute" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">add_numeric_attribute</span><span
+            class="method-args">(attribute_name)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>An <a href="Attribute.html">Attribute</a> instance object is inserted into
+the current <a href="Instances.html">Instances</a> object</p>
+<ul><li>
+<p><strong>Args</strong>    :</p>
+<ul><li>
+<p><code>attribute_name</code> -&gt; A name for the new attribute</p>
+</li></ul>
+</li><li>
+<p><strong>WARNING</strong>    :</p>
+</li></ul>
+
+<p>This method only creates an empty attribute field</p>
+          
+
+          
+          <div class="method-source-code" id="add_numeric_attribute-source">
+            <pre><span class="ruby-comment"># File lib/ruby_mining/core/type/instances.rb, line 195</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">add_numeric_attribute</span>(<span class="ruby-identifier">attribute_name</span>)
+  <span class="ruby-identifier">insertAttributeAt</span>(<span class="ruby-constant">Attribute</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">attribute_name</span>), <span class="ruby-keyword">self</span>.<span class="ruby-identifier">numAttributes</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- add_numeric_attribute-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- add_numeric_attribute-method -->
+
+    
+      <div id="method-i-check_array" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">check_array</span><span
+            class="method-args">(data)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>(check function): should check that the array is bidimensional and that the
+lengths are equal</p>
+          
+
+          
+          <div class="method-source-code" id="check_array-source">
+            <pre><span class="ruby-comment"># File lib/ruby_mining/core/type/instances.rb, line 161</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">check_array</span>(<span class="ruby-identifier">data</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">true</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- check_array-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- check_array-method -->
+
+    
+      <div id="method-i-check_numeric_instance" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">check_numeric_instance</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Check if this instance’s attributes are all Numeric</p>
+          
+
+          
+          <div class="method-source-code" id="check_numeric_instance-source">
+            <pre><span class="ruby-comment"># File lib/ruby_mining/core/type/instances.rb, line 58</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">check_numeric_instance</span>
+  <span class="ruby-identifier">enumerateAttributes</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">att</span><span class="ruby-operator">|</span>
+    <span class="ruby-keyword">unless</span> <span class="ruby-identifier">att</span>.<span class="ruby-identifier">isNumeric</span>
+      <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-node">&quot;Sorry, attribute '#{att.name}' is not numeric!&quot;</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- check_numeric_instance-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- check_numeric_instance-method -->
+
+    
+      <div id="method-i-dim" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">dim</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Return the dimensions of the dataset (for the current <a
+href="Instances.html">Instances</a> class object)</p>
+          
+
+          
+          <div class="method-source-code" id="dim-source">
+            <pre><span class="ruby-comment"># File lib/ruby_mining/core/type/instances.rb, line 53</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">dim</span>
+  <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;Rows number:\t#{numInstances}\nColumns number:\t #{numAttributes}&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- dim-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- dim-method -->
+
+    
+      <div id="method-i-mean" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">mean</span><span
+            class="method-args">(attribute_name)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Return the mean value of a single attribute (a column from the <a
+href="Instances.html">Instances</a> object)</p>
+<ul><li>
+<p><strong>Args</strong>    :</p>
+<ul><li>
+<p><code>attribute_name</code> -&gt; a String, the name of the attribute</p>
+</li></ul>
+</li></ul>
+          
+
+          
+          <div class="method-source-code" id="mean-source">
+            <pre><span class="ruby-comment"># File lib/ruby_mining/core/type/instances.rb, line 105</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">mean</span>(<span class="ruby-identifier">attribute_name</span>) 
+  <span class="ruby-identifier">sum</span> = <span class="ruby-identifier">enumerateInstances</span>.<span class="ruby-identifier">inject</span>(<span class="ruby-value">0</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">s</span>,<span class="ruby-identifier">x</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">s</span><span class="ruby-operator">+=</span><span class="ruby-identifier">x</span>.<span class="ruby-identifier">value</span>(<span class="ruby-identifier">attribute</span>(<span class="ruby-identifier">attribute_name</span>))
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">sum</span><span class="ruby-operator">/</span>(<span class="ruby-identifier">numInstances</span>*<span class="ruby-value">1.0</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- mean-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- mean-method -->
+
+    
+      <div id="method-i-merge_with" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">merge_with</span><span
+            class="method-args">(instances)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Merges two sets of <a href="Instances.html">Instances</a> together. The
+resulting set will have all the attributes of the first set plus all the
+attributes of the second set. The number of instances in both sets must be
+the same.</p>
+<ul><li>
+<p><strong>Args</strong>    :</p>
+<ul><li>
+<p><code>instances</code> -&gt; An <a href="Instances.html">Instances</a>
+class object</p>
+</li></ul>
+</li></ul>
+          
+
+          
+          <div class="method-source-code" id="merge_with-source">
+            <pre><span class="ruby-comment"># File lib/ruby_mining/core/type/instances.rb, line 248</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">merge_with</span>(<span class="ruby-identifier">instances</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-constant">Instances</span>.<span class="ruby-identifier">mergeInstances</span>(<span class="ruby-keyword">self</span>,<span class="ruby-identifier">instances</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- merge_with-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- merge_with-method -->
+
+    
+      <div id="method-i-n_columns" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">n_columns</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Return the number of columns (<a href="Attribute.html">Attribute</a>
+objects) in the dataset</p>
+          
+
+          
+          <div class="method-source-code" id="n_columns-source">
+            <pre><span class="ruby-comment"># File lib/ruby_mining/core/type/instances.rb, line 48</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">n_columns</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">numAttributes</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- n_columns-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- n_columns-method -->
+
+    
+      <div id="method-i-n_rows" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">n_rows</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Return the number of rows (<a href="Instance.html">Instance</a> objects) in
+the dataset</p>
+          
+
+          
+          <div class="method-source-code" id="n_rows-source">
+            <pre><span class="ruby-comment"># File lib/ruby_mining/core/type/instances.rb, line 43</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">n_rows</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">numInstances</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- n_rows-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- n_rows-method -->
+
+    
+      <div id="method-i-populate_by_row" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">populate_by_row</span><span
+            class="method-args">(data)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>An entire dataset is inserted ‘by row’ into the current <a
+href="Instances.html">Instances</a> object  i.e. one <a
+href="Instance.html">Instance</a> object is inserted at the time</p>
+<ul><li>
+<p><strong>Args</strong>    :</p>
+<ul><li>
+<p><code>data</code> -&gt; a bidimensional array</p>
+</li></ul>
+</li></ul>
+          
+
+          
+          <div class="method-source-code" id="populate_by_row-source">
+            <pre><span class="ruby-comment"># File lib/ruby_mining/core/type/instances.rb, line 169</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">populate_by_row</span>(<span class="ruby-identifier">data</span>)
+  <span class="ruby-keyword">unless</span> <span class="ruby-identifier">check_array</span>(<span class="ruby-identifier">data</span>) <span class="ruby-operator">==</span> <span class="ruby-keyword">false</span>
+    <span class="ruby-identifier">data</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">row</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">add_instance</span>(<span class="ruby-identifier">row</span>)
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- populate_by_row-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- populate_by_row-method -->
+
+    
+      <div id="method-i-return_attr_data" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">return_attr_data</span><span
+            class="method-args">(att)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Return data for a single attribute (a column from the <a
+href="Instances.html">Instances</a> object)</p>
+<ul><li>
+<p><strong>Args</strong>    :</p>
+<ul><li>
+<p><code>att</code> -&gt; a String, the name of the attribute</p>
+</li></ul>
+</li></ul>
+          
+
+          
+          <div class="method-source-code" id="return_attr_data-source">
+            <pre><span class="ruby-comment"># File lib/ruby_mining/core/type/instances.rb, line 87</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">return_attr_data</span>(<span class="ruby-identifier">att</span>)
+  <span class="ruby-identifier">attr_values</span> = <span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">attribute</span>(<span class="ruby-identifier">att</span>).<span class="ruby-identifier">isNumeric</span>
+    <span class="ruby-identifier">enumerateInstances</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">i</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">attr_values</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">i</span>.<span class="ruby-identifier">value</span>(<span class="ruby-identifier">attribute</span>(<span class="ruby-identifier">att</span>))
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">attr_index</span> = <span class="ruby-identifier">attribute</span>(<span class="ruby-identifier">att</span>).<span class="ruby-identifier">index</span>
+    <span class="ruby-identifier">enumerateInstances</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">inst</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">attr_values</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">inst</span>.<span class="ruby-identifier">string_value</span>(<span class="ruby-identifier">attr_index</span>)
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">attr_values</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- return_attr_data-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- return_attr_data-method -->
+
+    
+      <div id="method-i-summary" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">summary</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Print to STDOUT the list of the Instances’s attributes (with the
+corresponding types)</p>
+          
+
+          
+          <div class="method-source-code" id="summary-source">
+            <pre><span class="ruby-comment"># File lib/ruby_mining/core/type/instances.rb, line 214</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">summary</span>
+  <span class="ruby-identifier">summary</span> = <span class="ruby-constant">Ruport</span><span class="ruby-operator">::</span><span class="ruby-constant">Data</span><span class="ruby-operator">::</span><span class="ruby-constant">Table</span><span class="ruby-operator">::</span><span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">summary</span>.<span class="ruby-identifier">add_column</span> <span class="ruby-string">'Attributes'</span>
+  <span class="ruby-identifier">enumerateAttributes</span>.<span class="ruby-identifier">each_with_index</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">att</span>,<span class="ruby-identifier">idx</span><span class="ruby-operator">|</span> 
+    <span class="ruby-identifier">summary</span>.<span class="ruby-identifier">add_column</span> <span class="ruby-identifier">idx</span><span class="ruby-operator">+</span><span class="ruby-value">1</span>
+  <span class="ruby-keyword">end</span>
+ 
+  <span class="ruby-identifier">att_names</span> = [<span class="ruby-string">'Names'</span>]
+  <span class="ruby-identifier">enumerateAttributes</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">att</span><span class="ruby-operator">|</span> 
+    <span class="ruby-identifier">att_names</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot;'#{att.name}'&quot;</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">summary</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">att_names</span>
+
+  <span class="ruby-identifier">att_types</span> = [<span class="ruby-string">'Types'</span>]
+  <span class="ruby-identifier">enumerateAttributes</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">att</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">att_types</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-string">&quot;Numeric&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">att</span>.<span class="ruby-identifier">isNumeric</span> 
+    <span class="ruby-identifier">att_types</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-string">&quot;Nominal&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">att</span>.<span class="ruby-identifier">isNominal</span>
+    <span class="ruby-identifier">att_types</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-string">&quot;Date&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">att</span>.<span class="ruby-identifier">isDate</span>
+    <span class="ruby-identifier">att_types</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-string">&quot;String&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">att</span>.<span class="ruby-identifier">isString</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">summary</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">att_types</span>
+
+  <span class="ruby-identifier">puts</span> <span class="ruby-identifier">summary</span>
+
+  <span class="ruby-identifier">count</span>=<span class="ruby-value">0</span>
+  <span class="ruby-identifier">enumerateInstances</span>.<span class="ruby-identifier">each</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">inst</span><span class="ruby-operator">|</span> <span class="ruby-identifier">count</span>=<span class="ruby-identifier">count</span><span class="ruby-operator">+</span><span class="ruby-value">1</span>}
+  <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;\nNumber of rows: #{count}&quot;</span> 
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- summary-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- summary-method -->
+
+    
+      <div id="method-i-to_ARFF" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">to_ARFF</span><span
+            class="method-args">(out_file)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Write the content of the current <a href="Instances.html">Instances</a>
+object to a .arff file</p>
+<ul><li>
+<p><strong>Args</strong>    :</p>
+<ul><li>
+<p><code>out_file</code> -&gt; a String, the name of the output file</p>
+</li></ul>
+</li></ul>
+          
+
+          
+          <div class="method-source-code" id="to_ARFF-source">
+            <pre><span class="ruby-comment"># File lib/ruby_mining/core/type/instances.rb, line 135</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">to_ARFF</span>(<span class="ruby-identifier">out_file</span>)
+  <span class="ruby-identifier">saver</span> = <span class="ruby-constant">ArffSaver</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">saver</span>.<span class="ruby-identifier">setInstances</span>(<span class="ruby-keyword">self</span>)
+  <span class="ruby-identifier">out_file</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">new</span> <span class="ruby-identifier">out_file</span>
+  <span class="ruby-identifier">saver</span>.<span class="ruby-identifier">setFile</span>(<span class="ruby-identifier">out_file</span>);
+  <span class="ruby-identifier">saver</span>.<span class="ruby-identifier">writeBatch</span>();
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- to_ARFF-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- to_ARFF-method -->
+
+    
+      <div id="method-i-to_Apache_matrix" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">to_Apache_matrix</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Convert the present <a href="Instances.html">Instances</a> object to an <a
+href="../../Apache.html">Apache</a> matrix if every <a
+href="Instances.html">Instances</a> attribute is Numeric</p>
+          
+
+          
+          <div class="method-source-code" id="to_Apache_matrix-source">
+            <pre><span class="ruby-comment"># File lib/ruby_mining/core/type/instances.rb, line 68</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">to_Apache_matrix</span>
+  <span class="ruby-identifier">check_numeric_instance</span>
+  <span class="ruby-identifier">ruby_array</span> = <span class="ruby-identifier">to_a</span>
+  <span class="ruby-identifier">java_double_array</span> = <span class="ruby-constant">Core</span><span class="ruby-operator">::</span><span class="ruby-constant">Utils</span><span class="ruby-operator">::</span><span class="ruby-identifier">bidimensional_to_double</span>(<span class="ruby-identifier">ruby_array</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-constant">Core</span><span class="ruby-operator">::</span><span class="ruby-constant">Type</span><span class="ruby-operator">::</span><span class="ruby-constant">Apache_matrix</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">java_double_array</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- to_Apache_matrix-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- to_Apache_matrix-method -->
+
+    
+      <div id="method-i-to_Apache_matrix_block" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">to_Apache_matrix_block</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Convert the present <a href="Instances.html">Instances</a> object to an <a
+href="../../Apache.html">Apache</a> matrix (block) if every <a
+href="Instances.html">Instances</a> attribute is Numeric</p>
+          
+
+          
+          <div class="method-source-code" id="to_Apache_matrix_block-source">
+            <pre><span class="ruby-comment"># File lib/ruby_mining/core/type/instances.rb, line 77</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">to_Apache_matrix_block</span>
+  <span class="ruby-identifier">check_numeric_instance</span>
+  <span class="ruby-identifier">ruby_array</span> = <span class="ruby-identifier">to_a</span>
+  <span class="ruby-identifier">java_double_array</span> = <span class="ruby-constant">Core</span><span class="ruby-operator">::</span><span class="ruby-constant">Utils</span><span class="ruby-operator">::</span><span class="ruby-identifier">bidimensional_to_double</span>(<span class="ruby-identifier">ruby_array</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-constant">Core</span><span class="ruby-operator">::</span><span class="ruby-constant">Type</span><span class="ruby-operator">::</span><span class="ruby-constant">Apache_matrix_block</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">java_double_array</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- to_Apache_matrix_block-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- to_Apache_matrix_block-method -->
+
+    
+      <div id="method-i-to_CSV" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">to_CSV</span><span
+            class="method-args">(out_file)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Write the content of the current <a href="Instances.html">Instances</a>
+object to a .csv file</p>
+<ul><li>
+<p><strong>Args</strong>    :</p>
+<ul><li>
+<p><code>out_file</code> -&gt; a String, the name of the output file</p>
+</li></ul>
+</li></ul>
+          
+
+          
+          <div class="method-source-code" id="to_CSV-source">
+            <pre><span class="ruby-comment"># File lib/ruby_mining/core/type/instances.rb, line 124</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">to_CSV</span>(<span class="ruby-identifier">out_file</span>)
+  <span class="ruby-identifier">saver</span> = <span class="ruby-constant">CSVSaver</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">saver</span>.<span class="ruby-identifier">setInstances</span>(<span class="ruby-keyword">self</span>)
+  <span class="ruby-identifier">out_file</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">new</span> <span class="ruby-identifier">out_file</span>
+  <span class="ruby-identifier">saver</span>.<span class="ruby-identifier">setFile</span>(<span class="ruby-identifier">out_file</span>);
+  <span class="ruby-identifier">saver</span>.<span class="ruby-identifier">writeBatch</span>();
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- to_CSV-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- to_CSV-method -->
+
+    
+      <div id="method-i-to_a2d" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">to_a2d</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Convert an <a href="Instances.html">Instances</a> object to a bidimensional
+Ruby array where each row corresponds to an <a
+href="Instance.html">Instance</a> object</p>
+          
+
+          
+          <div class="method-source-code" id="to_a2d-source">
+            <pre><span class="ruby-comment"># File lib/ruby_mining/core/type/instances.rb, line 23</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">to_a2d</span>
+  <span class="ruby-identifier">matrix</span> = <span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">att</span> = <span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">enumerateAttributes</span>.<span class="ruby-identifier">each_with_index</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">a</span>,<span class="ruby-identifier">idx</span><span class="ruby-operator">|</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">a</span>.<span class="ruby-identifier">isNumeric</span>  
+      <span class="ruby-identifier">enumerate_instances</span>.<span class="ruby-identifier">each</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">s</span><span class="ruby-operator">|</span> <span class="ruby-identifier">att</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">s</span>.<span class="ruby-identifier">value</span>(<span class="ruby-identifier">s</span>.<span class="ruby-identifier">attribute</span>(<span class="ruby-identifier">idx</span>))}
+      <span class="ruby-identifier">matrix</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">att</span>
+      <span class="ruby-identifier">att</span> = <span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span>
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">enumerateInstances</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">inst</span><span class="ruby-operator">|</span>
+        <span class="ruby-identifier">att</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">inst</span>.<span class="ruby-identifier">string_value</span>(<span class="ruby-identifier">idx</span>)
+      <span class="ruby-keyword">end</span>
+      <span class="ruby-identifier">matrix</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">att</span>
+      <span class="ruby-identifier">att</span> = <span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">matrix</span>.<span class="ruby-identifier">transpose</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- to_a2d-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- to_a2d-method -->
+
+    
+      <div id="method-i-variance" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">variance</span><span
+            class="method-args">(attribute_name)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Return the variance of a single attribute (a column from the <a
+href="Instances.html">Instances</a> object)</p>
+<ul><li>
+<p><strong>Args</strong>    :</p>
+<ul><li>
+<p><code>attribute_name</code> -&gt; a String, the name of the attribute</p>
+</li></ul>
+</li></ul>
+          
+
+          
+          <div class="method-source-code" id="variance-source">
+            <pre><span class="ruby-comment"># File lib/ruby_mining/core/type/instances.rb, line 115</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">variance</span>(<span class="ruby-identifier">attribute_name</span>) 
+  <span class="ruby-identifier">enumerateAttributes</span>.<span class="ruby-identifier">each_with_idx</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">att</span>,<span class="ruby-identifier">idx</span><span class="ruby-operator">|</span>
+    <span class="ruby-keyword">return</span> <span class="ruby-identifier">variance</span>(<span class="ruby-identifier">idx</span>) <span class="ruby-keyword">if</span> <span class="ruby-identifier">att</span>.<span class="ruby-identifier">name</span><span class="ruby-operator">==</span><span class="ruby-identifier">attribute_name</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- variance-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- variance-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.2.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>module Weka::Db - ruby-mining 0.1.0</title>
+
+<link type="text/css" media="screen" href="../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/darkfish.js"></script>
+
+
+<body id="top" class="module">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="../index.html">Home</a>
+    <a href="../table_of_contents.html#classes">Classes</a>
+    <a href="../table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/ruby_mining/weka/db/db.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-c-query_mysql">::query_mysql</a>
+    
+    <li><a href="#method-c-query_postgresql">::query_postgresql</a>
+    
+    <li><a href="#method-c-save_to_mysql">::save_to_mysql</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="../README_rdoc.html">README</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../Weka.html">Weka</a>
+  
+    <li><a href="../Weka/Classifier.html">Weka::Classifier</a>
+  
+    <li><a href="../Weka/Classifier/Bayes.html">Weka::Classifier::Bayes</a>
+  
+    <li><a href="../Weka/Classifier/Bayes/AODE.html">Weka::Classifier::Bayes::AODE</a>
+  
+    <li><a href="../Weka/Classifier/Bayes/AODE/Base.html">Weka::Classifier::Bayes::AODE::Base</a>
+  
+    <li><a href="../Weka/Classifier/Bayes/BayesianLogisticRegression.html">Weka::Classifier::Bayes::BayesianLogisticRegression</a>
+  
+    <li><a href="../Weka/Classifier/Bayes/BayesianLogisticRegression/Base.html">Weka::Classifier::Bayes::BayesianLogisticRegression::Base</a>
+  
+    <li><a href="../Weka/Classifier/Bayes/ComplementNaiveBayes.html">Weka::Classifier::Bayes::ComplementNaiveBayes</a>
+  
+    <li><a href="../Weka/Classifier/Bayes/ComplementNaiveBayes/Base.html">Weka::Classifier::Bayes::ComplementNaiveBayes::Base</a>
+  
+    <li><a href="../Weka/Classifier/Bayes/NaiveBayes.html">Weka::Classifier::Bayes::NaiveBayes</a>
+  
+    <li><a href="../Weka/Classifier/Bayes/NaiveBayes/Base.html">Weka::Classifier::Bayes::NaiveBayes::Base</a>
+  
+    <li><a href="../Weka/Classifier/Bayes/WAODE.html">Weka::Classifier::Bayes::WAODE</a>
+  
+    <li><a href="../Weka/Classifier/Bayes/WAODE/Base.html">Weka::Classifier::Bayes::WAODE::Base</a>
+  
+    <li><a href="../Weka/Classifier/Evaluation.html">Weka::Classifier::Evaluation</a>
+  
+    <li><a href="../Weka/Db.html">Weka::Db</a>
+  
+    <li><a href="../Weka/Filter.html">Weka::Filter</a>
+  
+    <li><a href="../Weka/Filter/Supervised.html">Weka::Filter::Supervised</a>
+  
+    <li><a href="../Weka/Filter/Supervised/Attribute.html">Weka::Filter::Supervised::Attribute</a>
+  
+    <li><a href="../Weka/Filter/Supervised/Attribute/AttributeSelection.html">Weka::Filter::Supervised::Attribute::AttributeSelection</a>
+  
+    <li><a href="../Weka/Filter/Supervised/Attribute/Discretize.html">Weka::Filter::Supervised::Attribute::Discretize</a>
+  
+    <li><a href="../Weka/Filter/Supervised/Instance.html">Weka::Filter::Supervised::Instance</a>
+  
+    <li><a href="../Weka/Filter/Unsupervised.html">Weka::Filter::Unsupervised</a>
+  
+    <li><a href="../Weka/Filter/Unsupervised/Attribute.html">Weka::Filter::Unsupervised::Attribute</a>
+  
+    <li><a href="../Weka/Filter/Unsupervised/Attribute/Add.html">Weka::Filter::Unsupervised::Attribute::Add</a>
+  
+    <li><a href="../Weka/Filter/Unsupervised/Attribute/Center.html">Weka::Filter::Unsupervised::Attribute::Center</a>
+  
+    <li><a href="../Weka/Filter/Unsupervised/Attribute/Discretize.html">Weka::Filter::Unsupervised::Attribute::Discretize</a>
+  
+    <li><a href="../Weka/Filter/Unsupervised/Attribute/NominalToString.html">Weka::Filter::Unsupervised::Attribute::NominalToString</a>
+  
+    <li><a href="../Weka/Filter/Unsupervised/Attribute/Normalize.html">Weka::Filter::Unsupervised::Attribute::Normalize</a>
+  
+    <li><a href="../Weka/Filter/Unsupervised/Attribute/PrincipalComponents.html">Weka::Filter::Unsupervised::Attribute::PrincipalComponents</a>
+  
+    <li><a href="../Weka/Filter/Unsupervised/Attribute/Remove.html">Weka::Filter::Unsupervised::Attribute::Remove</a>
+  
+    <li><a href="../Weka/Filter/Unsupervised/Attribute/Standardize.html">Weka::Filter::Unsupervised::Attribute::Standardize</a>
+  
+    <li><a href="../Weka/Filter/Unsupervised/Attribute/StringToWordVector.html">Weka::Filter::Unsupervised::Attribute::StringToWordVector</a>
+  
+    <li><a href="../Weka/Filter/Unsupervised/Instance.html">Weka::Filter::Unsupervised::Instance</a>
+  
+    <li><a href="../Weka/Filter/Unsupervised/Instance/NonSparseToSparse.html">Weka::Filter::Unsupervised::Instance::NonSparseToSparse</a>
+  
+    <li><a href="../Weka/Filter/Unsupervised/Instance/Normalize.html">Weka::Filter::Unsupervised::Instance::Normalize</a>
+  
+    <li><a href="../Weka/Filter/Unsupervised/Instance/RemoveRange.html">Weka::Filter::Unsupervised::Instance::RemoveRange</a>
+  
+    <li><a href="../Weka/Filter/Unsupervised/Instance/RemoveWithValues.html">Weka::Filter::Unsupervised::Instance::RemoveWithValues</a>
+  
+    <li><a href="../Weka/Filter/Unsupervised/Instance/SparseToNonSparse.html">Weka::Filter::Unsupervised::Instance::SparseToNonSparse</a>
+  
+    <li><a href="../Weka/Filter/Unsupervised/Instance/SubsetByExpression.html">Weka::Filter::Unsupervised::Instance::SubsetByExpression</a>
+  
+    <li><a href="../Core.html">Core</a>
+  
+    <li><a href="../Core/Parser.html">Core::Parser</a>
+  
+    <li><a href="../Core/Type.html">Core::Type</a>
+  
+    <li><a href="../Core/Type/Apache_matrix.html">Core::Type::Apache_matrix</a>
+  
+    <li><a href="../Core/Type/Apache_matrix_block.html">Core::Type::Apache_matrix_block</a>
+  
+    <li><a href="../Core/Type/Attribute.html">Core::Type::Attribute</a>
+  
+    <li><a href="../Core/Type/Instance.html">Core::Type::Instance</a>
+  
+    <li><a href="../Core/Type/Instances.html">Core::Type::Instances</a>
+  
+    <li><a href="../Core/Type/Instances/Base.html">Core::Type::Instances::Base</a>
+  
+    <li><a href="../Core/Utils.html">Core::Utils</a>
+  
+    <li><a href="../Apache.html">Apache</a>
+  
+    <li><a href="../Apache/Stat.html">Apache::Stat</a>
+  
+    <li><a href="../Apache/Stat/Inference.html">Apache::Stat::Inference</a>
+  
+    <li><a href="../Apache/Stat/Inference/Chi_square.html">Apache::Stat::Inference::Chi_square</a>
+  
+    <li><a href="../Apache/Stat/Inference/T_test.html">Apache::Stat::Inference::T_test</a>
+  
+    <li><a href="../Bayes_utils.html">Bayes_utils</a>
+  
+    <li><a href="../Bayes_utils/ClassMethods.html">Bayes_utils::ClassMethods</a>
+  
+    <li><a href="../Array.html">Array</a>
+  
+    <li><a href="../Supervised_Util.html">Supervised_Util</a>
+  
+    <li><a href="../Unsupervised_Util.html">Unsupervised_Util</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="module">module Weka::Db</h1>
+
+  <div id="description" class="description">
+    
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    <!-- Methods -->
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Class Methods</h3>
+
+    
+      <div id="method-c-query_mysql" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">query_mysql</span><span
+            class="method-args">(db_url,user,psw,query)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Query data from a MySQL database</p>
+<ul><li>
+<p><strong>Args</strong>    :</p>
+<ul><li>
+<p><code>db_url</code> -&gt; The database URL</p>
+</li><li>
+<p><code>user</code> -&gt; User name</p>
+</li><li>
+<p><code>psw</code> -&gt; Password</p>
+</li><li>
+<p><code>quey</code> -&gt; A query to submit</p>
+</li></ul>
+</li></ul>
+          
+
+          
+          <div class="method-source-code" id="query_mysql-source">
+            <pre><span class="ruby-comment"># File lib/ruby_mining/weka/db/db.rb, line 15</span>
+<span class="ruby-keyword">def</span> <span class="ruby-constant">Db</span>.<span class="ruby-identifier">query_mysql</span>(<span class="ruby-identifier">db_url</span>,<span class="ruby-identifier">user</span>,<span class="ruby-identifier">psw</span>,<span class="ruby-identifier">query</span>)
+        <span class="ruby-identifier">open</span>([[<span class="ruby-constant">Dir</span>.<span class="ruby-identifier">home</span>],[<span class="ruby-string">&quot;DatabaseUtils.props&quot;</span>]].<span class="ruby-identifier">join</span>(<span class="ruby-string">&quot;/&quot;</span>),<span class="ruby-string">'w'</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">out</span><span class="ruby-operator">|</span>
+                <span class="ruby-identifier">open</span>(<span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-constant">File</span>.<span class="ruby-identifier">dirname</span>(<span class="ruby-constant">File</span>.<span class="ruby-identifier">expand_path</span>(<span class="ruby-keyword">__FILE__</span>)), <span class="ruby-string">'DatabaseUtils_mysql'</span>),<span class="ruby-string">'r'</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">f</span><span class="ruby-operator">|</span>
+                        <span class="ruby-identifier">f</span>.<span class="ruby-identifier">each_line</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">line</span><span class="ruby-operator">|</span>
+                                <span class="ruby-identifier">out</span>.<span class="ruby-identifier">write</span> <span class="ruby-identifier">line</span>
+                        <span class="ruby-keyword">end</span>
+                <span class="ruby-keyword">end</span>
+        <span class="ruby-keyword">end</span>
+    <span class="ruby-identifier">loader</span> = <span class="ruby-constant">DatabaseLoader</span>.<span class="ruby-identifier">new</span>
+        <span class="ruby-identifier">loader</span>.<span class="ruby-identifier">setSource</span>(<span class="ruby-identifier">db_url</span>,<span class="ruby-identifier">user</span>,<span class="ruby-identifier">psw</span>)
+        <span class="ruby-identifier">loader</span>.<span class="ruby-identifier">setQuery</span>(<span class="ruby-identifier">query</span>)
+        <span class="ruby-identifier">data</span> = <span class="ruby-identifier">loader</span>.<span class="ruby-identifier">getDataSet</span>
+        <span class="ruby-keyword">return</span> <span class="ruby-identifier">data</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- query_mysql-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- query_mysql-method -->
+
+    
+      <div id="method-c-query_postgresql" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">query_postgresql</span><span
+            class="method-args">(db_url,user,psw,query)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Query data from a PostgreSQL database</p>
+<ul><li>
+<p><strong>Args</strong>    :</p>
+<ul><li>
+<p><code>db_url</code> -&gt; The database URL</p>
+</li><li>
+<p><code>user</code> -&gt; User name</p>
+</li><li>
+<p><code>psw</code> -&gt; Password</p>
+</li><li>
+<p><code>quey</code> -&gt; A query to submit</p>
+</li></ul>
+</li></ul>
+          
+
+          
+          <div class="method-source-code" id="query_postgresql-source">
+            <pre><span class="ruby-comment"># File lib/ruby_mining/weka/db/db.rb, line 36</span>
+<span class="ruby-keyword">def</span> <span class="ruby-constant">Db</span>.<span class="ruby-identifier">query_postgresql</span>(<span class="ruby-identifier">db_url</span>,<span class="ruby-identifier">user</span>,<span class="ruby-identifier">psw</span>,<span class="ruby-identifier">query</span>)
+        <span class="ruby-identifier">open</span>([[<span class="ruby-constant">Dir</span>.<span class="ruby-identifier">home</span>],[<span class="ruby-string">&quot;DatabaseUtils.props&quot;</span>]].<span class="ruby-identifier">join</span>(<span class="ruby-string">&quot;/&quot;</span>),<span class="ruby-string">'w'</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">out</span><span class="ruby-operator">|</span>
+                <span class="ruby-identifier">open</span>(<span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-constant">File</span>.<span class="ruby-identifier">dirname</span>(<span class="ruby-constant">File</span>.<span class="ruby-identifier">expand_path</span>(<span class="ruby-keyword">__FILE__</span>)), <span class="ruby-string">'DatabaseUtils_postgresql'</span>),<span class="ruby-string">'r'</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">f</span><span class="ruby-operator">|</span>
+                        <span class="ruby-identifier">f</span>.<span class="ruby-identifier">each_line</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">line</span><span class="ruby-operator">|</span>
+                                <span class="ruby-identifier">out</span>.<span class="ruby-identifier">write</span> <span class="ruby-identifier">line</span>
+                        <span class="ruby-keyword">end</span>
+                <span class="ruby-keyword">end</span>
+        <span class="ruby-keyword">end</span>
+    <span class="ruby-identifier">loader</span> = <span class="ruby-constant">DatabaseLoader</span>.<span class="ruby-identifier">new</span>
+        <span class="ruby-identifier">loader</span>.<span class="ruby-identifier">setSource</span>(<span class="ruby-identifier">db_url</span>,<span class="ruby-identifier">user</span>,<span class="ruby-identifier">psw</span>)
+        <span class="ruby-identifier">loader</span>.<span class="ruby-identifier">setQuery</span>(<span class="ruby-identifier">query</span>)
+        <span class="ruby-identifier">data</span> = <span class="ruby-identifier">loader</span>.<span class="ruby-identifier">getDataSet</span>
+        <span class="ruby-keyword">return</span> <span class="ruby-identifier">data</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- query_postgresql-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- query_postgresql-method -->
+
+    
+      <div id="method-c-save_to_mysql" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">save_to_mysql</span><span
+            class="method-args">(db_url,user,psw,data,table)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Save an Instances class object to a Mysql database</p>
+<ul><li>
+<p><strong>Args</strong>    :</p>
+<ul><li>
+<p><code>db_url</code> -&gt; The database URL</p>
+</li><li>
+<p><code>user</code> -&gt; User name</p>
+</li><li>
+<p><code>psw</code> -&gt; Password</p>
+</li><li>
+<p><code>data</code> -&gt; An Instances class object</p>
+</li><li>
+<p><code>table</code> -&gt; The destination table in the database</p>
+</li></ul>
+</li></ul>
+          
+
+          
+          <div class="method-source-code" id="save_to_mysql-source">
+            <pre><span class="ruby-comment"># File lib/ruby_mining/weka/db/db.rb, line 58</span>
+<span class="ruby-keyword">def</span> <span class="ruby-constant">Db</span>.<span class="ruby-identifier">save_to_mysql</span>(<span class="ruby-identifier">db_url</span>,<span class="ruby-identifier">user</span>,<span class="ruby-identifier">psw</span>,<span class="ruby-identifier">data</span>,<span class="ruby-identifier">table</span>)
+        <span class="ruby-identifier">open</span>([[<span class="ruby-constant">Dir</span>.<span class="ruby-identifier">home</span>],[<span class="ruby-string">&quot;DatabaseUtils.props&quot;</span>]].<span class="ruby-identifier">join</span>(<span class="ruby-string">&quot;/&quot;</span>),<span class="ruby-string">'w'</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">out</span><span class="ruby-operator">|</span>
+                <span class="ruby-identifier">open</span>(<span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-constant">File</span>.<span class="ruby-identifier">dirname</span>(<span class="ruby-constant">File</span>.<span class="ruby-identifier">expand_path</span>(<span class="ruby-keyword">__FILE__</span>)), <span class="ruby-string">'DatabaseUtils_mysql'</span>),<span class="ruby-string">'r'</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">f</span><span class="ruby-operator">|</span>
+                        <span class="ruby-identifier">f</span>.<span class="ruby-identifier">each_line</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">line</span><span class="ruby-operator">|</span>
+                                <span class="ruby-identifier">out</span>.<span class="ruby-identifier">write</span> <span class="ruby-identifier">line</span>
+                        <span class="ruby-keyword">end</span>
+                <span class="ruby-keyword">end</span>
+        <span class="ruby-keyword">end</span>
+        <span class="ruby-identifier">saver</span> = <span class="ruby-constant">DatabaseSaver</span>.<span class="ruby-identifier">new</span>
+        <span class="ruby-identifier">saver</span>.<span class="ruby-identifier">setDestination</span>(<span class="ruby-identifier">db_url</span>,<span class="ruby-identifier">user</span>,<span class="ruby-identifier">psw</span>)
+        <span class="ruby-identifier">saver</span>.<span class="ruby-identifier">setTableName</span>(<span class="ruby-identifier">table</span>)
+        <span class="ruby-identifier">saver</span>.<span class="ruby-identifier">setRelationForTableName</span>(<span class="ruby-keyword">false</span>)
+        <span class="ruby-identifier">saver</span>.<span class="ruby-identifier">setInstances</span>(<span class="ruby-identifier">data</span>)
+        <span class="ruby-identifier">saver</span>.<span class="ruby-identifier">writeBatch</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- save_to_mysql-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- save_to_mysql-method -->
+
+    
+    </section><!-- public-class-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.2.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

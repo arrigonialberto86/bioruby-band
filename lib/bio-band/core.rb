@@ -1,0 +1,6 @@
+require 'bio-band/core/type/instances'
+require 'bio-band/core/type/instance'
+require 'bio-band/core/parser/parser'
+require 'bio-band/core/type/utils'
+require 'bio-band/core/type/attribute'
+require 'bio-band/core/type/apache_matrices'

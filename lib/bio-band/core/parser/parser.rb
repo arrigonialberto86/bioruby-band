@@ -9,7 +9,7 @@ module Core
       data_instance = Core::Type::Instances.new file_in
       return data_instance
   	end
-
+    # Parse an CSV file and create an Instances object
   	def Parser.parse_CSV(csv_file) 
   	  java_import 'weka.core.converters.CSVLoader'
       java_import 'java.io.File'

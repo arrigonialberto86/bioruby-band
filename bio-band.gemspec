@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["arrigonialberto86"]
-  s.date = "2013-07-24"
+  s.date = "2013-07-25"
   s.description = "Data mining and machine learning algorithms for JRuby "
   s.email = "arrigonialberto86@gmail.com"
   s.executables = ["bio-band"]
@@ -19,17 +19,62 @@ Gem::Specification.new do |s|
     "README.rdoc"
   ]
   s.files = [
-    ".document",
-    ".rspec",
-    ".travis.yml",
     "Gemfile",
+    "Gemfile.lock",
+    "Jarfile",
+    "Jarfile.lock",
     "LICENSE.txt",
     "README.rdoc",
     "Rakefile",
+    "VERSION",
     "bin/bio-band",
+    "bio-band.gemspec",
+    "ext/mkrf_conf.rb",
+    "features/create_dataset.feature",
+    "features/step_definitions/create_dataset.rb",
+    "features/step_definitions/weka_classifiers.rb",
+    "features/step_definitions/weka_clustering.rb",
+    "features/step_definitions/weka_filters.rb",
+    "features/step_definitions/weka_parsers.rb",
     "features/support/env.rb",
+    "features/weka_classifiers.feature",
+    "features/weka_clustering.feature",
+    "features/weka_filters.feature",
+    "features/weka_parsers.feature",
+    "features/weka_pipeline.feature",
     "lib/bio-band.rb",
-    "lib/bio-band/band.rb",
+    "lib/bio-band/apache.rb",
+    "lib/bio-band/apache/stat/inference.rb",
+    "lib/bio-band/core.rb",
+    "lib/bio-band/core/parser/parser.rb",
+    "lib/bio-band/core/type/apache_matrices.rb",
+    "lib/bio-band/core/type/attribute.rb",
+    "lib/bio-band/core/type/instance.rb",
+    "lib/bio-band/core/type/instances.rb",
+    "lib/bio-band/core/type/utils.rb",
+    "lib/bio-band/weka.rb",
+    "lib/bio-band/weka/classifiers/bayes/bayes.rb",
+    "lib/bio-band/weka/classifiers/bayes/bayes_utils.rb",
+    "lib/bio-band/weka/classifiers/evaluation.rb",
+    "lib/bio-band/weka/classifiers/functions/functions.rb",
+    "lib/bio-band/weka/classifiers/functions/functions_utils.rb",
+    "lib/bio-band/weka/classifiers/lazy/lazy.rb",
+    "lib/bio-band/weka/classifiers/lazy/lazy_utils.rb",
+    "lib/bio-band/weka/classifiers/trees/trees.rb",
+    "lib/bio-band/weka/classifiers/trees/trees_utils.rb",
+    "lib/bio-band/weka/clusterers/clusterers.rb",
+    "lib/bio-band/weka/clusterers/clusterers_utils.rb",
+    "lib/bio-band/weka/db/DatabaseUtils_mysql",
+    "lib/bio-band/weka/db/DatabaseUtils_postgresql",
+    "lib/bio-band/weka/db/db.rb",
+    "lib/bio-band/weka/filters/supervised/attribute/attribute.rb",
+    "lib/bio-band/weka/filters/supervised/instance/instance.rb",
+    "lib/bio-band/weka/filters/supervised/supervised_utils.rb",
+    "lib/bio-band/weka/filters/unsupervised/attribute/attribute.rb",
+    "lib/bio-band/weka/filters/unsupervised/instance/instance.rb",
+    "lib/bio-band/weka/filters/unsupervised/unsupervised_utils.rb",
+    "resources/weather.csv",
+    "resources/weather.numeric.arff",
     "spec/bio-band_spec.rb",
     "spec/spec_helper.rb"
   ]

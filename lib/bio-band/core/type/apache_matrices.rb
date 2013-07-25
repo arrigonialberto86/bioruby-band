@@ -6,6 +6,7 @@ module Core
   	java_import 'org.apache.commons.math3.linear.BlockRealMatrix'
   	java_import 'org.apache.commons.math3.linear.Array2DRowRealMatrix'
 
+  	#Define variables to use ruby-like names instead of Java's
   	Apache_matrix = Array2DRowRealMatrix
   	Apache_matrix_block = BlockRealMatrix
 

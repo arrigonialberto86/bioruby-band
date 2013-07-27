@@ -5,6 +5,7 @@ module Weka
 	module Classifier
 		module Trees
       java_import 'weka.classifiers.trees.J48'
+      java_import 'weka.classifiers.trees.FT'
       java_import 'weka.classifiers.trees.RandomForest'
 
       class FT

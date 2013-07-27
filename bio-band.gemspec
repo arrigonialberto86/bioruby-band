@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = "bio-band"
-  s.version = "0.1.0"
+  s.version = "0.1.1"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["arrigonialberto86"]
-  s.date = "2013-07-25"
+  s.date = "2013-07-27"
   s.description = "Data mining and machine learning algorithms for JRuby "
   s.email = "arrigonialberto86@gmail.com"
   s.executables = ["bio-band"]
@@ -44,7 +44,9 @@ Gem::Specification.new do |s|
     "features/weka_pipeline.feature",
     "lib/bio-band.rb",
     "lib/bio-band/apache.rb",
+    "lib/bio-band/apache/stat/correlation.rb",
     "lib/bio-band/apache/stat/inference.rb",
+    "lib/bio-band/apache/stat/regression.rb",
     "lib/bio-band/core.rb",
     "lib/bio-band/core/parser/parser.rb",
     "lib/bio-band/core/type/apache_matrices.rb",

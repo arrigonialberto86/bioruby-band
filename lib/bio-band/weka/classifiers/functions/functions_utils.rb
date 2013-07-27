@@ -3,6 +3,12 @@
 module Functions_utils
 	java_import "weka.core.Utils"
 
+  def init_function
+    set_options(self.class.options) if self.class.options 
+    self.class.data.setClassIndex(self.class.class_index) if self.class.class_index
+    buildClassifier(self.class.data)
+  end
+
 	#Instance methods list
   def self.included(base)
     base.extend(ClassMethods)

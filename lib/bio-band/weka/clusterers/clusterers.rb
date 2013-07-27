@@ -11,8 +11,7 @@ module Weka
       class Base < SimpleKMeans
         def initialize
           super
-          set_options(self.class.options) if self.class.options 
-          buildClusterer(self.class.data)
+          init_clusterer
         end
       end
     end
@@ -22,8 +21,7 @@ module Weka
       class Base < FarthestFirst
         def initialize
           super
-          set_options(self.class.options) if self.class.options 
-          buildClusterer(self.class.data)
+          init_clusterer
         end
       end
     end

@@ -12,9 +12,7 @@ module Weka
         class Base < FT
           def initialize
             super
-            set_options(self.class.options) if self.class.options 
-            self.class.data.setClassIndex(self.class.class_index) if self.class.class_index
-            buildClassifier(self.class.data)
+            init_tree
           end
         end
       end
@@ -24,9 +22,7 @@ module Weka
         class Base < J48
           def initialize
             super
-            set_options(self.class.options) if self.class.options 
-            self.class.data.setClassIndex(self.class.class_index) if self.class.class_index
-            buildClassifier(self.class.data)
+            init_tree
           end
         end
       end
@@ -36,9 +32,7 @@ module Weka
         class Base < RandomForest
           def initialize
             super
-            set_options(self.class.options) if self.class.options 
-            self.class.data.setClassIndex(self.class.class_index) if self.class.class_index
-            buildClassifier(self.class.data)
+            init_tree
           end
         end
       end

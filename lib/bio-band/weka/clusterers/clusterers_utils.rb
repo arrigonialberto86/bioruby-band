@@ -3,6 +3,11 @@
 module Clusterer_utils
 	java_import "weka.core.Utils"
 
+	def init_clusterer
+    set_options(self.class.options) if self.class.options 
+    buildClusterer(self.class.data)
+	end
+
 	#Instance methods list
   def self.included(base)
     base.extend(ClassMethods)

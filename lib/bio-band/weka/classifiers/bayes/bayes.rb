@@ -15,9 +15,7 @@ module Weka
 				class Base < NaiveBayes
 					def initialize
 						super
-						set_options(self.class.options) if self.class.options 
-						self.class.data.setClassIndex(self.class.class_index) if self.class.class_index
-						buildClassifier(self.class.data)
+            init_classifier
 					end
 				end
 			end
@@ -27,9 +25,7 @@ module Weka
 				class Base < AODE
 					def initialize
 						super
-						set_options(self.class.options) if self.class.options 
-						self.class.data.setClassIndex(self.class.class_index) if self.class.class_index
-						buildClassifier(self.class.data)
+            init_classifier
 					end
 				end
 			end
@@ -39,9 +35,7 @@ module Weka
 				class Base < BayesianLogisticRegression
 					def initialize
 						super
-						set_options(self.class.options) if self.class.options 
-						self.class.data.setClassIndex(self.class.class_index) if self.class.class_index
-						buildClassifier(self.class.data)
+            init_classifier
 					end
 				end
 			end
@@ -51,9 +45,7 @@ module Weka
 				class Base < ComplementNaiveBayes
 					def initialize
 						super
-						set_options(self.class.options) if self.class.options 
-						self.class.data.setClassIndex(self.class.class_index) if self.class.class_index
-						buildClassifier(self.class.data)
+            init_classifier
 					end
 				end
 			end
@@ -63,9 +55,7 @@ module Weka
 				class Base < WAODE
 					def initialize
 						super
-						set_options(self.class.options) if self.class.options 
-						self.class.data.setClassIndex(self.class.class_index) if self.class.class_index
-						buildClassifier(self.class.data)
+            init_classifier
 					end
 				end
 			end

@@ -11,9 +11,7 @@ module Weka
         class Base < LinearRegression
           def initialize
             super
-            set_options(self.class.options) if self.class.options 
-            self.class.data.setClassIndex(self.class.class_index) if self.class.class_index
-            buildClassifier(self.class.data)
+            init_function
           end
         end
       end

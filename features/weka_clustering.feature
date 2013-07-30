@@ -10,5 +10,6 @@ Feature: Weka dataset clustering
     And I want to set K = "4" as K-means option
     And I want to perform clustering on the parsed dataset
     And I want to report result statistics 
+    And I want to use Weka clustering cross-validation
 
 

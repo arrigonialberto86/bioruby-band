@@ -5,6 +5,17 @@ module Weka
 	module Clusterer
     java_import 'weka.clusterers.SimpleKMeans'
     java_import 'weka.clusterers.FarthestFirst'
+    java_import 'weka.clusterers.EM'
+
+    class EM
+      include Clusterer_utils
+      class Base < EM
+        def initialize
+          super
+          init_clusterer
+        end
+      end
+    end
 
     class SimpleKMeans
       include Clusterer_utils

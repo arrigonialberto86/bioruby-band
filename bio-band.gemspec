@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["arrigonialberto86"]
-  s.date = "2013-07-27"
+  s.date = "2013-07-30"
   s.description = "Data mining and machine learning algorithms for JRuby "
   s.email = "arrigonialberto86@gmail.com"
   s.executables = ["bio-band"]
@@ -62,6 +62,8 @@ Gem::Specification.new do |s|
     "lib/bio-band/weka/classifiers/functions/functions_utils.rb",
     "lib/bio-band/weka/classifiers/lazy/lazy.rb",
     "lib/bio-band/weka/classifiers/lazy/lazy_utils.rb",
+    "lib/bio-band/weka/classifiers/rules/rules.rb ",
+    "lib/bio-band/weka/classifiers/rules/rules_utils.rb",
     "lib/bio-band/weka/classifiers/trees/trees.rb",
     "lib/bio-band/weka/classifiers/trees/trees_utils.rb",
     "lib/bio-band/weka/clusterers/clusterers.rb",

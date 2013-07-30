@@ -28,3 +28,7 @@ end
 Then(/^I want to report result statistics$/) do
   puts @clustered
 end
+
+Then(/^I want to use Weka clustering cross\-validation$/) do
+  puts @clustered.validate
+end

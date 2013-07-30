@@ -2,6 +2,7 @@
 #to inherit the following methods (instance and class methods)
 module Clusterer_utils
 	java_import "weka.core.Utils"
+	java_import "weka.clusterers.ClusterEvaluation"
 
 	def init_clusterer
     set_options(self.class.options) if self.class.options 
@@ -35,6 +36,14 @@ module Clusterer_utils
   def list_capabilities
     get_capabilities.to_s
   end
+
+  # 'data' is an Instances class object
+ 	def validate
+ 		eval = ClusterEvaluation.new
+ 		eval.setClusterer(self)
+ 		eval.evaluateClusterer(self.class.data)
+ 		eval.clusterResultsToString
+ 	end 
 
 	#Class methods module
 	module ClassMethods

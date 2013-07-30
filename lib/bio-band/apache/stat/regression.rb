@@ -13,6 +13,7 @@ module Apache
         obj = SimpleRegression.new
         obj.addData(data)
         return obj
+        # add Jruby methods for regression analysis
       end
 
 

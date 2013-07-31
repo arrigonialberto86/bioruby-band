@@ -25,8 +25,14 @@ module Bayes_utils
 	end
 
 	def description
-    puts globalInfo
+    globalInfo
 	end
+
+  def cross_validate(fold)
+    eval = Weka::Classifier::Evaluation.new self.class.data
+    eval.crossValidateModel(self.class.ancestors[2].new, self.class.data, fold.to_java(:int), Random.new(1))
+    eval.summary
+  end
 
 	#Class methods module
 	module ClassMethods

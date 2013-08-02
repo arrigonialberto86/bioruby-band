@@ -55,6 +55,14 @@ module Core
         puts "Rows number:\t#{numInstances}\nColumns number:\t #{numAttributes}"
       end
 
+      def each_row
+        enumerate_instances.each {|inst| yield(inst)}
+      end
+
+      def each_column
+        enumerate_attributes.each {|attribute| yield(attribute)}
+      end
+
       # Check if this instance's attributes are all Numeric
       def check_numeric_instance
         enumerateAttributes.each do |att|

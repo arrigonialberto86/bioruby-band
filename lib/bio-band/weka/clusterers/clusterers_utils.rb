@@ -38,7 +38,7 @@ module Clusterer_utils
   end
 
   # 'data' is an Instances class object
- 	def validate
+ 	def evaluate
  		eval = ClusterEvaluation.new
  		eval.setClusterer(self)
  		eval.evaluateClusterer(self.class.data)

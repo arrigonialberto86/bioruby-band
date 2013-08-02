@@ -8,7 +8,9 @@ module Weka
   		module Attribute
 
   			java_import "weka.filters.unsupervised.attribute.Add"
+        java_import "weka.filters.unsupervised.attribute.AddCluster"
   			java_import "weka.filters.unsupervised.attribute.Center"
+        java_import "weka.filters.unsupervised.attribute.ClusterMembership"
   			java_import "weka.filters.unsupervised.attribute.Discretize"
   			java_import "weka.filters.unsupervised.attribute.NominalToString"
   			java_import "weka.filters.unsupervised.attribute.Normalize"
@@ -23,9 +25,17 @@ module Weka
           include Unsupervised_Util
   			end
 
+        class AddCluster
+          include Unsupervised_Util
+        end
+
   			class Center
           include Unsupervised_Util
   			end
+
+        class ClusterMembership
+          include Unsupervised_Util
+        end
 
   			class Discretize
           include Unsupervised_Util
@@ -57,6 +67,8 @@ module Weka
 
         Weka::Filter::Unsupervised::Attribute::PrincipalComponents.__persistent__ = true
         Weka::Filter::Unsupervised::Attribute::Add.__persistent__ = true
+        Weka::Filter::Unsupervised::Attribute::AddCluster.__persistent__ = true
+        Weka::Filter::Unsupervised::Attribute::ClusterMembership.__persistent__ = true
         Weka::Filter::Unsupervised::Attribute::Standardize.__persistent__ = true
         Weka::Filter::Unsupervised::Attribute::Remove.__persistent__ = true
         Weka::Filter::Unsupervised::Attribute::Normalize.__persistent__ = true

@@ -59,7 +59,6 @@ module Weka
 					end
 				end
 			end
-
 		end
 	end
 end

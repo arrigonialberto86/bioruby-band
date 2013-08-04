@@ -21,7 +21,7 @@ module Bayes_utils
   end
 
 	def list_options
-		listOptions.each {|key| puts "#{key.synopsis} #{key.description}"}
+    listOptions.map {|key| "#{key.synopsis} #{key.description}"}.join("\n")
 	end
 
 	def description

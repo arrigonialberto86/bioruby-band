@@ -20,9 +20,7 @@ module Clusterer_utils
   end
 
 	def list_options
-    options = ''
-		listOptions.each {|key| options="#{options}\n#{key.synopsis} #{key.description}"}
-    options
+		listOptions.map {|key| "#{key.synopsis} #{key.description}"}.join("\n")
 	end
 
 	def description

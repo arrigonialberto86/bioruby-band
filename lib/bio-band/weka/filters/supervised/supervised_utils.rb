@@ -4,11 +4,7 @@ module Supervised_Util
 
 	#Instance methods list
 	def filter_options
-		begin
-			listOptions.each {|key| puts "#{key.synopsis} #{key.description}"}
-		rescue
-			puts  "Sorry, list option is available for this filter"
-		end
+    listOptions.map {|key| "#{key.synopsis} #{key.description}"}.join("\n")
 	end
 
 	def set_filter_options(options_string)
@@ -22,7 +18,7 @@ module Supervised_Util
 	end
 
 	def description
-    begin; puts globalInfo; rescue; NoMethodError; puts "Sorry, no description available for this filter"; end
+    begin; globalInfo; rescue; NoMethodError; "Sorry, no description available for this filter"; end
 	end
 
 	def use

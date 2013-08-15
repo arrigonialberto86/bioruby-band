@@ -3,6 +3,8 @@ require 'ruport'
 require 'json'
 
 module Core
+
+  java_import "weka.core.SerializationHelper"
   module Type
     
     java_import "weka.core.Instances"
@@ -46,7 +48,7 @@ module Core
       end
 
       # Return the number of columns (Attribute objects) in the dataset
-      def n_columns
+      def n_col
         return numAttributes
       end
 
@@ -333,7 +335,13 @@ module Core
       attributes.each {|value| attributes_vector.addElement(value)}
       return Instances.new(name,attributes_vector,0)
     end
+
   end
+  # Helper class for serialization
+  # Works with classifiers, filters, clusterers...
+  class SerializationHelper
+  end
+  
 end
 
 

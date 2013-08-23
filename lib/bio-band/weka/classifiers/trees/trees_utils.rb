@@ -1,5 +1,5 @@
-#This module is used by the 'trees' classifiers from 'trees.rb' 
-#to inherit the following methods (instance and class methods)
+# This module is used by the 'trees' classifiers from 'trees.rb' 
+# to inherit the following methods (instance and class methods)
 module Trees_utils
 	java_import "weka.core.Utils"
 

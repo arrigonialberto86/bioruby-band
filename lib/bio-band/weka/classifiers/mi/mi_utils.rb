@@ -1,4 +1,4 @@
-#This module is used by the 'trees' classifiers from 'trees.rb' 
+#This module is used by the 'mi' classifiers from 'mi.rb' 
 #to inherit the following methods (instance and class methods)
 module Mi_utils
 	java_import "weka.core.Utils"

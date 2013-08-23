@@ -5,7 +5,7 @@ module Weka
 
 		class Evaluation
 			def summary
-				puts toSummaryString
+				toSummaryString
 			end
 		end
     

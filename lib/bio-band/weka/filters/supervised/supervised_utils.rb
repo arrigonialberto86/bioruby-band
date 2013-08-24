@@ -25,4 +25,10 @@ module Supervised_Util
     Filter.useFilter(@input,self)
   end
 
+  def set(&block)
+    self.instance_eval(&block)
+  end
+
 end
+
+

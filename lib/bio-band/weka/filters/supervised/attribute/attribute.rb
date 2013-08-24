@@ -13,11 +13,14 @@ module Weka
 
    			class AttributeSelection
           include Supervised_Util
-   			end
+  			end
 
         class Discretize  
           include Supervised_Util
         end
+
+        Weka::Filter::Supervised::Attribute::AttributeSelection.__persistent__ = true
+        Weka::Filter::Unsupervised::Attribute::Discretize.__persistent__ = true
   			
   		end
   	end

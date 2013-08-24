@@ -18,7 +18,7 @@ module Supervised_Util
   end
 
   def description
-    begin; globalInfo; rescue; NoMethodError; "Sorry, no description available for this filter"; end
+    globalInfo
   end
 
   def use

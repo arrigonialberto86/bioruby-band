@@ -18,7 +18,7 @@ module Unsupervised_Util
   end
 
   def description
-    begin; puts globalInfo; rescue; NoMethodError; puts "Sorry, no description available for this filter"; end
+    globalInfo
   end
 
   def use

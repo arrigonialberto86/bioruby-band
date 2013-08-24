@@ -8,19 +8,44 @@ module Weka
   		module Attribute
   			java_import "weka.core.Utils"
   			java_import "weka.filters.Filter"
+
+        java_import "weka.filters.supervised.attribute.AddClassification"
+        java_import "weka.filters.supervised.attribute.ClassOrder"
    			java_import "weka.filters.supervised.attribute.AttributeSelection"
+        java_import "weka.filters.supervised.attribute.NominalToBinary"
+        java_import "weka.filters.supervised.attribute.PLSFilter"
         java_import "weka.filters.supervised.attribute.Discretize"
+
+        class AddClassification  
+          include Supervised_Util
+        end
 
    			class AttributeSelection
           include Supervised_Util
   			end
 
+        class ClassOrder
+          include Supervised_Util
+        end
+
         class Discretize  
+          include Supervised_Util
+        end
+
+        class NominalToBinary  
+          include Supervised_Util
+        end
+
+        class PLSFilter  
           include Supervised_Util
         end
 
         Weka::Filter::Supervised::Attribute::AttributeSelection.__persistent__ = true
         Weka::Filter::Unsupervised::Attribute::Discretize.__persistent__ = true
+        Weka::Filter::Unsupervised::Attribute::AddClassification.__persistent__ = true
+        Weka::Filter::Unsupervised::Attribute::ClassOrder.__persistent__ = true
+        Weka::Filter::Unsupervised::Attribute::NominalToBinary.__persistent__ = true
+        Weka::Filter::Unsupervised::Attribute::PLSFilter.__persistent__ = true
   			
   		end
   	end

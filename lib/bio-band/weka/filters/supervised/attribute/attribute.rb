@@ -41,11 +41,11 @@ module Weka
         end
 
         Weka::Filter::Supervised::Attribute::AttributeSelection.__persistent__ = true
-        Weka::Filter::Unsupervised::Attribute::Discretize.__persistent__ = true
-        Weka::Filter::Unsupervised::Attribute::AddClassification.__persistent__ = true
-        Weka::Filter::Unsupervised::Attribute::ClassOrder.__persistent__ = true
-        Weka::Filter::Unsupervised::Attribute::NominalToBinary.__persistent__ = true
-        Weka::Filter::Unsupervised::Attribute::PLSFilter.__persistent__ = true
+        Weka::Filter::Supervised::Attribute::Discretize.__persistent__ = true
+        Weka::Filter::Supervised::Attribute::AddClassification.__persistent__ = true
+        Weka::Filter::Supervised::Attribute::ClassOrder.__persistent__ = true
+        Weka::Filter::Supervised::Attribute::NominalToBinary.__persistent__ = true
+        Weka::Filter::Supervised::Attribute::PLSFilter.__persistent__ = true
   			
   		end
   	end

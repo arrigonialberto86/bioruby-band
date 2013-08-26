@@ -2,7 +2,7 @@
 #to inherit the following methods (instance and class methods)
 module Bayes_utils
 
-	java_import "weka.core.Utils"
+  java_import "weka.core.Utils"
 
   def init_classifier
     set_options(self.class.options) if self.class.options 
@@ -10,23 +10,37 @@ module Bayes_utils
     buildClassifier(self.class.data)
   end
 
-	#Instance methods list
+  def init_instance_classifier(&block)
+    self.instance_eval(&block)
+    @dataset.setClassIndex(@class_index)
+    build_classifier(@dataset)
+  end
+
+  def set_data(data)
+    @dataset = data 
+  end
+
+  def set_class_index(class_index)
+    @class_index = class_index 
+  end
+
+  #Instance methods list
   def self.included(base)
     base.extend(ClassMethods)
   end
 
   def set_options(options)
-  	options_inst = Utils.splitOptions(options)
-		setOptions(options_inst)
+    options_inst = Utils.splitOptions(options)
+    setOptions(options_inst)
   end
 
-	def list_options
+  def list_options
     listOptions.map {|key| "#{key.synopsis} #{key.description}"}.join("\n")
-	end
+  end
 
-	def description
+  def description
     globalInfo
-	end
+  end
 
   def cross_validate(fold)
     eval = Weka::Classifier::Evaluation.new self.class.data
@@ -34,21 +48,21 @@ module Bayes_utils
     eval.summary
   end
 
-	#Class methods module
-	module ClassMethods
-		
-		def self.classifier_attr_accessor(*args)
-	    args.each do |arg|
-	      #Here's the getter
-	      self.class_eval("def #{arg};@#{arg};end")
-	      #Here's the setter
-	      self.class_eval("def set_#{arg}(val);@#{arg}=val;end")
-	  	end
-  	end
+  #Class methods module
+  module ClassMethods
+    
+    def self.classifier_attr_accessor(*args)
+      args.each do |arg|
+        #Here's the getter
+        self.class_eval("def #{arg};@#{arg};end")
+        #Here's the setter
+        self.class_eval("def set_#{arg}(val);@#{arg}=val;end")
+      end
+    end
 
-		classifier_attr_accessor :options,:data,:class_index
+    classifier_attr_accessor :options,:data,:class_index
 
-	end
+  end
 end
 
 

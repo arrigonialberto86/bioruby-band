@@ -27,9 +27,13 @@ module Weka
       class AODE
         include Bayes_utils
         class Base < AODE
-          def initialize
+          def initialize(&block)
             super
-            init_classifier
+            if block_given?
+              init_instance_classifier(&block)
+            else
+              init_classifier  
+            end
           end
         end
       end
@@ -37,9 +41,13 @@ module Weka
       class BayesianLogisticRegression
         include Bayes_utils
         class Base < BayesianLogisticRegression
-          def initialize
+          def initialize(&block)
             super
-            init_classifier
+            if block_given?
+              init_instance_classifier(&block)
+            else
+              init_classifier  
+            end
           end
         end
       end
@@ -47,9 +55,13 @@ module Weka
       class ComplementNaiveBayes
         include Bayes_utils
         class Base < ComplementNaiveBayes
-          def initialize
+          def initialize(&block)
             super
-            init_classifier
+            if block_given?
+              init_instance_classifier(&block)
+            else
+              init_classifier  
+            end
           end
         end
       end
@@ -57,9 +69,13 @@ module Weka
       class WAODE
         include Bayes_utils
         class Base < WAODE
-          def initialize
+          def initialize(&block)
             super
-            init_classifier
+            if block_given?
+              init_instance_classifier(&block)
+            else
+              init_classifier  
+            end
           end
         end
       end

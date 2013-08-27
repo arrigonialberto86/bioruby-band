@@ -170,7 +170,7 @@ module Core
       # (check function): should check that the array is bidimensional and that
       # the lengths are equal
       def check_array(data)
-        return true
+        return true # still to be done
       end
 
       # An entire dataset is inserted 'by row' into the current Instances object 
@@ -246,9 +246,11 @@ module Core
 
         puts summary
 
-        count=0
-        enumerateInstances.each {|inst| count=count+1}
-        puts "\nNumber of rows: #{count}" 
+        unless enumerate_instances.nil?
+          count=0
+          enumerateInstances.each {|inst| count=count+1}
+          puts "\nNumber of rows: #{count}"
+        end 
       end
 
       # Merges two sets of Instances together. The resulting set will have all the
@@ -267,50 +269,51 @@ module Core
      #   return instances
      # end
 
-      @@positions = []
       # This method is used for attributes definition in uninitialized Instances-derived classes
-      def self.att(attr_type,name,*values)
+      def att(attr_type,name,*values)
         att = Core::Type.create_numeric_attr(name.to_java(:string)) if attr_type == :numeric
         att = Core::Type.create_nominal_attr(name.to_java(:string),values[0]) if attr_type == :nominal
         att = Core::Type.create_date_attr(name.to_java(:string),values[0]) if attr_type == :date
         att = att = Core::Type.create_string_attr(name.to_java(:string)) if attr_type == :string      
-        @@positions << att
+        @positions << att
       end
 
       # This method is used for Nominal attributes definition in uninitialized Instances-derived classes
       # * *Args*    :
       #   - +name+ -> Attribute name, a String
       #   - +values+ -> An array of values for the nominal attribute
-      def self.nominal(name,values)
+      def nominal(name,values)
         att :nominal, name, values
       end
 
       # This method is used for Numeric attributes definition in uninitialized Instances-derived classes
       # * *Args*    :
       #   - +name+ -> Attribute name, a String
-      def self.numeric(name)
+      def numeric(name)
         att :numeric, name
       end
 
       # This method is used for Date attributes definition in uninitialized Instances-derived classes
       # * *Args*    :
       #   - +name+ -> Attribute name, a String
-      def self.date(name)
+      def date(name)
         att :date, name
       end
 
       # This method is used for String attributes definition in uninitialized Instances-derived classes
       # * *Args*    :
       #   - +name+ -> Attribute name, a String
-      def self.string(name)
+      def string(name)
         att :string, name
       end
 
       # Class used for the creation of a new dataset (Instances class)
       class Base < Instances
-        def initialize
+        def initialize(&block)
           attributes_vector = FastVector.new
-          @@positions.each {|value| attributes_vector.addElement(value)}
+          @positions = []
+          self.instance_eval(&block) if block
+          @positions.each {|value| attributes_vector.addElement(value)}
           super('Instances',attributes_vector,0)
         end
       end

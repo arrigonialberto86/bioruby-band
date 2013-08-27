@@ -20,9 +20,13 @@ module Weka
       class LeastMedSq
         include Functions_utils
         class Base < LeastMedSq
-          def initialize
+          def initialize(&block)
             super
-            init_function
+            if block_given?
+              init_instance_classifier(&block)
+            else
+              init_classifier  
+            end
           end
         end
       end
@@ -30,9 +34,13 @@ module Weka
       class LibSVM
         include Functions_utils
         class Base < LibSVM
-          def initialize
+          def initialize(&block)
             super
-            init_function
+            if block_given?
+              init_instance_classifier(&block)
+            else
+              init_classifier  
+            end
           end
         end
       end
@@ -40,9 +48,13 @@ module Weka
       class LinearRegression
         include Functions_utils
         class Base < LinearRegression
-          def initialize
+          def initialize(&block)
             super
-            init_function
+            if block_given?
+              init_instance_classifier(&block)
+            else
+              init_classifier  
+            end
           end
         end
       end
@@ -50,9 +62,13 @@ module Weka
       class PLSClassifier
         include Functions_utils
         class Base < PLSClassifier
-          def initialize
+          def initialize(&block)
             super
-            init_function
+            if block_given?
+              init_instance_classifier(&block)
+            else
+              init_classifier  
+            end
           end
         end
       end
@@ -60,9 +76,13 @@ module Weka
       class RBFNetwork
         include Functions_utils
         class Base < RBFNetwork
-          def initialize
+          def initialize(&block)
             super
-            init_function
+            if block_given?
+              init_instance_classifier(&block)
+            else
+              init_classifier  
+            end
           end
         end
       end
@@ -70,9 +90,13 @@ module Weka
       class SMO
         include Functions_utils
         class Base < SMO
-          def initialize
+          def initialize(&block)
             super
-            init_function
+            if block_given?
+              init_instance_classifier(&block)
+            else
+              init_classifier  
+            end
           end
         end
       end
@@ -80,9 +104,13 @@ module Weka
       class SMOreg
         include Functions_utils
         class Base < SMOreg
-          def initialize
+          def initialize(&block)
             super
-            init_function
+            if block_given?
+              init_instance_classifier(&block)
+            else
+              init_classifier  
+            end
           end
         end
       end
@@ -90,9 +118,13 @@ module Weka
       class SPegasos
         include Functions_utils
         class Base < SPegasos
-          def initialize
+          def initialize(&block)
             super
-            init_function
+            if block_given?
+              init_instance_classifier(&block)
+            else
+              init_classifier  
+            end
           end
         end
       end 
@@ -100,9 +132,13 @@ module Weka
       class GaussianProcesses
         include Functions_utils
         class Base < GaussianProcesses
-          def initialize
+          def initialize(&block)
             super
-            init_function
+            if block_given?
+              init_instance_classifier(&block)
+            else
+              init_classifier  
+            end
           end
         end
       end
@@ -110,9 +146,13 @@ module Weka
       class VotedPerceptron
         include Functions_utils
         class Base < VotedPerceptron
-          def initialize
+          def initialize(&block)
             super
-            init_function
+            if block_given?
+              init_instance_classifier(&block)
+            else
+              init_classifier  
+            end
           end
         end
       end
@@ -120,9 +160,13 @@ module Weka
       class Winnow
         include Functions_utils
         class Base < Winnow
-          def initialize
+          def initialize(&block)
             super
-            init_function
+            if block_given?
+              init_instance_classifier(&block)
+            else
+              init_classifier  
+            end
           end
         end
       end

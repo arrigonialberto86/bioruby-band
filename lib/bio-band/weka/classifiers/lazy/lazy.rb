@@ -14,19 +14,27 @@ module Weka
 			class KStar
 				include Lazy_utils
 				class Base < KStar
-					def initialize
-						super
-            init_lazy
-					end
+          def initialize(&block)
+            super
+            if block_given?
+              init_instance_classifier(&block)
+            else
+              init_classifier  
+            end
+          end
 				end
 			end
 
       class LWL
         include Lazy_utils
         class Base < LWL
-          def initialize
+          def initialize(&block)
             super
-            init_lazy
+            if block_given?
+              init_instance_classifier(&block)
+            else
+              init_classifier  
+            end
           end
         end
       end
@@ -34,9 +42,13 @@ module Weka
       class LBR
         include Lazy_utils
         class Base < LBR
-          def initialize
+          def initialize(&block)
             super
-            init_lazy
+            if block_given?
+              init_instance_classifier(&block)
+            else
+              init_classifier  
+            end
           end
         end
       end
@@ -44,9 +56,13 @@ module Weka
       class IB1
         include Lazy_utils
         class Base < IB1
-          def initialize
+          def initialize(&block)
             super
-            init_lazy
+            if block_given?
+              init_instance_classifier(&block)
+            else
+              init_classifier  
+            end
           end
         end
       end
@@ -54,9 +70,13 @@ module Weka
       class IBk
         include Lazy_utils
         class Base < IBk
-          def initialize
+          def initialize(&block)
             super
-            init_lazy
+            if block_given?
+              init_instance_classifier(&block)
+            else
+              init_classifier  
+            end
           end
         end
       end

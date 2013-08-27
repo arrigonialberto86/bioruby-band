@@ -20,9 +20,13 @@ module Weka
       class CitationKNN
         include Mi_utils
         class Base < CitationKNN
-          def initialize
+          def initialize(&block)
             super
-            init_mi
+            if block_given?
+              init_instance_classifier(&block)
+            else
+              init_classifier  
+            end
           end
         end
       end
@@ -30,9 +34,13 @@ module Weka
       class MIEMDD
         include Mi_utils
         class Base < MIEMDD
-          def initialize
+          def initialize(&block)
             super
-            init_mi
+            if block_given?
+              init_instance_classifier(&block)
+            else
+              init_classifier  
+            end
           end
         end
       end
@@ -40,9 +48,13 @@ module Weka
       class MILR
         include Mi_utils
         class Base < MILR
-          def initialize
+          def initialize(&block)
             super
-            init_mi
+            if block_given?
+              init_instance_classifier(&block)
+            else
+              init_classifier  
+            end
           end
         end
       end
@@ -50,9 +62,13 @@ module Weka
       class MINND
         include Mi_utils
         class Base < MINND
-          def initialize
+          def initialize(&block)
             super
-            init_mi
+            if block_given?
+              init_instance_classifier(&block)
+            else
+              init_classifier  
+            end
           end
         end
       end
@@ -60,9 +76,13 @@ module Weka
       class MIOptimalBall
         include Mi_utils
         class Base < MIOptimalBall
-          def initialize
+          def initialize(&block)
             super
-            init_mi
+            if block_given?
+              init_instance_classifier(&block)
+            else
+              init_classifier  
+            end
           end
         end
       end
@@ -70,9 +90,13 @@ module Weka
       class MISMO
         include Mi_utils
         class Base < MISMO
-          def initialize
+          def initialize(&block)
             super
-            init_mi
+            if block_given?
+              init_instance_classifier(&block)
+            else
+              init_classifier  
+            end
           end
         end
       end
@@ -80,9 +104,13 @@ module Weka
       class MISVM
         include Mi_utils
         class Base < MISVM
-          def initialize
+          def initialize(&block)
             super
-            init_mi
+            if block_given?
+              init_instance_classifier(&block)
+            else
+              init_classifier  
+            end
           end
         end
       end
@@ -90,9 +118,13 @@ module Weka
       class MIWrapper
         include Mi_utils
         class Base < MIWrapper
-          def initialize
+          def initialize(&block)
             super
-            init_mi
+            if block_given?
+              init_instance_classifier(&block)
+            else
+              init_classifier  
+            end
           end
         end
       end
@@ -100,9 +132,13 @@ module Weka
       class MDD
         include Mi_utils
         class Base < MDD
-          def initialize
+          def initialize(&block)
             super
-            init_mi
+            if block_given?
+              init_instance_classifier(&block)
+            else
+              init_classifier  
+            end
           end
         end
       end
@@ -110,9 +146,13 @@ module Weka
       class MIBoost
         include Mi_utils
         class Base < MIBoost
-          def initialize
+          def initialize(&block)
             super
-            init_mi
+            if block_given?
+              init_instance_classifier(&block)
+            else
+              init_classifier  
+            end
           end
         end
       end
@@ -120,9 +160,13 @@ module Weka
       class MIDD
         include Mi_utils
         class Base < MIDD
-          def initialize
+          def initialize(&block)
             super
-            init_mi
+            if block_given?
+              init_instance_classifier(&block)
+            else
+              init_classifier  
+            end
           end
         end
       end
@@ -130,9 +174,13 @@ module Weka
       class SimpleMI
         include Mi_utils
         class Base < SimpleMI
-          def initialize
+          def initialize(&block)
             super
-            init_mi
+            if block_given?
+              init_instance_classifier(&block)
+            else
+              init_classifier  
+            end
           end
         end
       end

@@ -2,8 +2,8 @@ $:.unshift File.dirname(__FILE__)
 require 'rules_utils'
 
 module Weka
-	module Classifier
-		module Rules
+  module Classifier
+    module Rules
       java_import "weka.classifiers.rules.DecisionTable" 
       java_import "weka.classifiers.rules.DTNB"
       java_import "weka.classifiers.rules.JRip"

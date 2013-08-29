@@ -3,16 +3,16 @@ module Unsupervised_Util
   java_import "weka.filters.Filter"
 
   #Instance methods list
-  def filter_options
+  def options_list
     listOptions.map {|key| "#{key.synopsis} #{key.description}"}.join("\n")
   end
 
-  def set_filter_options(options_string)
+  def filter_options(options_string)
     options = Utils.splitOptions(options_string)
     setOptions(options)
   end
 
-  def set_data(instances)
+  def data(instances)
     setInputFormat(instances)
     @input = instances
   end

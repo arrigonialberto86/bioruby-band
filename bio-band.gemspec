@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = "bio-band"
-  s.version = "0.1.2"
+  s.version = "0.1.3"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["arrigonialberto86"]
-  s.date = "2013-07-30"
+  s.date = "2013-09-02"
   s.description = "Data mining and machine learning algorithms for JRuby "
   s.email = "arrigonialberto86@gmail.com"
   s.executables = ["bio-band"]
@@ -55,6 +55,9 @@ Gem::Specification.new do |s|
     "lib/bio-band/core/type/instances.rb",
     "lib/bio-band/core/type/utils.rb",
     "lib/bio-band/weka.rb",
+    "lib/bio-band/weka/attribute_selection/attribute_selection_utils.rb",
+    "lib/bio-band/weka/attribute_selection/evaluators.rb",
+    "lib/bio-band/weka/attribute_selection/search.rb",
     "lib/bio-band/weka/classifiers/bayes/bayes.rb",
     "lib/bio-band/weka/classifiers/bayes/bayes_utils.rb",
     "lib/bio-band/weka/classifiers/evaluation.rb",
@@ -62,7 +65,9 @@ Gem::Specification.new do |s|
     "lib/bio-band/weka/classifiers/functions/functions_utils.rb",
     "lib/bio-band/weka/classifiers/lazy/lazy.rb",
     "lib/bio-band/weka/classifiers/lazy/lazy_utils.rb",
-    "lib/bio-band/weka/classifiers/rules/rules.rb ",
+    "lib/bio-band/weka/classifiers/mi/mi.rb",
+    "lib/bio-band/weka/classifiers/mi/mi_utils.rb",
+    "lib/bio-band/weka/classifiers/rules/rules.rb",
     "lib/bio-band/weka/classifiers/rules/rules_utils.rb",
     "lib/bio-band/weka/classifiers/trees/trees.rb",
     "lib/bio-band/weka/classifiers/trees/trees_utils.rb",

@@ -1,3 +1,6 @@
+$:.unshift File.dirname(__FILE__)
+require 'attribute_selection_utils'
+
 module Weka
   module Attribute_selection
     module Search
@@ -7,12 +10,15 @@ module Weka
       java_import 'weka.attributeSelection.Ranker'
 
       class GreedyStepwise
+        include Attribute_selection_Utils 
       end
 
       class Ranker
+        include Attribute_selection_Utils 
       end
 
       class RankSearch
+        include Attribute_selection_Utils 
       end
 
     end 

@@ -22,6 +22,8 @@ module Weka
 
    			class AttributeSelection
           include Supervised_Util
+          java_alias :evaluator, :setEvaluator, [Java::Weka.attributeSelection.ASEvaluation]
+          java_alias :search, :setSearch, [Java::Weka.attributeSelection.ASSearch]
   			end
 
         class ClassOrder

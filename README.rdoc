@@ -19,6 +19,8 @@ Otherwise use:
 
 == Usage
 
+See the Wiki section for in depth information on how to use this gem
+
 == Developers
 
 To use the library 

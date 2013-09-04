@@ -1,31 +1,41 @@
 #This module is used by the classes from the Clusterer module 
 #to inherit the following methods (instance and class methods)
 module Clusterer_utils
-	java_import "weka.core.Utils"
-	java_import "weka.clusterers.ClusterEvaluation"
+  java_import "weka.core.Utils"
+  java_import "weka.clusterers.ClusterEvaluation"
 
-	def init_clusterer
+  def init_clusterer
     set_options(self.class.options) if self.class.options 
     buildClusterer(self.class.data)
-	end
+  end
 
-	#Instance methods list
+  def init_instance_clusterer(&block)
+    self.instance_eval(&block)
+    #@dataset.setClassIndex(@class_index)
+    buildClusterer(@dataset)
+  end
+
+  #Instance methods list
   def self.included(base)
     base.extend(ClassMethods)
   end
 
-  def set_options(options)
-  	options_inst = Utils.splitOptions(options)
-		setOptions(options_inst)
+  def set_data(data)
+    @dataset = data 
   end
 
-	def list_options
-		listOptions.map {|key| "#{key.synopsis} #{key.description}"}.join("\n")
-	end
+  def set_options(options)
+    options_inst = Utils.splitOptions(options)
+    setOptions(options_inst)
+  end
 
-	def description
+  def list_options
+    listOptions.map {|key| "#{key.synopsis} #{key.description}"}.join("\n")
+  end
+
+  def description
     globalInfo
-	end
+  end
 
   def get_centroids 
     getClusterCentroids
@@ -36,26 +46,30 @@ module Clusterer_utils
   end
 
   # 'data' is an Instances class object
- 	def evaluate
- 		eval = ClusterEvaluation.new
- 		eval.setClusterer(self)
- 		eval.evaluateClusterer(self.class.data)
- 		eval.clusterResultsToString
- 	end 
+  def evaluate
+    eval = ClusterEvaluation.new
+    eval.setClusterer(self)
+    if self.class.data
+      eval.evaluateClusterer(self.class.data) 
+    else
+      eval.evaluateClusterer(@dataset)
+    end
+    eval.clusterResultsToString
+  end 
 
-	#Class methods module
-	module ClassMethods
-		
-		def self.classifier_attr_accessor(*args)
-	    args.each do |arg|
-	      #Here's the getter
-	      self.class_eval("def #{arg};@#{arg};end")
-	      #Here's the setter
-	      self.class_eval("def set_#{arg}(val);@#{arg}=val;end")
-	  	end
-  	end
+  #Class methods module
+  module ClassMethods
+    
+    def self.classifier_attr_accessor(*args)
+      args.each do |arg|
+        #Here's the getter
+        self.class_eval("def #{arg};@#{arg};end")
+        #Here's the setter
+        self.class_eval("def set_#{arg}(val);@#{arg}=val;end")
+      end
+    end
 
-		classifier_attr_accessor :options,:data
+    classifier_attr_accessor :options,:data
 
-	end
+  end
 end

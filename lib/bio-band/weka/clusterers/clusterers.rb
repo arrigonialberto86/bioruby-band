@@ -13,9 +13,13 @@ module Weka
     class Cobweb
       include Clusterer_utils
       class Base < Cobweb
-        def initialize
+        def initialize(&block)
           super
-          init_clusterer
+          if block_given?
+            init_instance_clusterer(&block)
+          else
+            init_clusterer  
+          end
         end
       end
     end
@@ -23,9 +27,13 @@ module Weka
     class EM
       include Clusterer_utils
       class Base < EM
-        def initialize
+        def initialize(&block)
           super
-          init_clusterer
+          if block_given?
+            init_instance_clusterer(&block)
+          else
+            init_clusterer  
+          end
         end
       end
     end
@@ -33,20 +41,27 @@ module Weka
     class HierarchicalClusterer
       include Clusterer_utils
       class Base < HierarchicalClusterer
-        def initialize
+        def initialize(&block)
           super
-          init_clusterer
+          if block_given?
+            init_instance_clusterer(&block)
+          else
+            init_clusterer  
+          end
         end
       end
     end
 
-
     class SimpleKMeans
       include Clusterer_utils
       class Base < SimpleKMeans
-        def initialize
+        def initialize(&block)
           super
-          init_clusterer
+          if block_given?
+            init_instance_clusterer(&block)
+          else
+            init_clusterer  
+          end
         end
       end
     end
@@ -54,9 +69,13 @@ module Weka
     class FarthestFirst
       include Clusterer_utils
       class Base < FarthestFirst
-        def initialize
+        def initialize(&block)
           super
-          init_clusterer
+          if block_given?
+            init_instance_clusterer(&block)
+          else
+            init_clusterer  
+          end
         end
       end
     end
@@ -64,9 +83,13 @@ module Weka
     class XMeans
       include Clusterer_utils
       class Base < XMeans
-        def initialize
+        def initialize(&block)
           super
-          init_clusterer
+          if block_given?
+            init_instance_clusterer(&block)
+          else
+            init_clusterer  
+          end
         end
       end
     end

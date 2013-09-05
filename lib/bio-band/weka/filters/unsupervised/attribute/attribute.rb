@@ -52,8 +52,12 @@ module Weka
   			class PrincipalComponents
           include Unsupervised_Util
   			end
-
+      
   			class Remove
+          alias_method :attribute_indices, :setAttributeIndices
+          def setAttributeIndices(index)
+            setAttributeIndices(index)
+          end
           include Unsupervised_Util
   			end
 

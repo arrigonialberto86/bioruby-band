@@ -45,15 +45,21 @@ module Clusterer_utils
     get_capabilities.to_s
   end
 
-  # 'data' is an Instances class object
-  def evaluate
+  # Validate clusterer. If the evaluation needs to be performed on a different dataset this function accepts 
+  # an optional parameter (an Instances class object)
+  def evaluate(*args)
     eval = ClusterEvaluation.new
     eval.setClusterer(self)
-    if self.class.data
-      eval.evaluateClusterer(self.class.data) 
+    if not args[0]
+      if self.class.data
+        eval.evaluateClusterer(self.class.data) 
+      else
+        eval.evaluateClusterer(@dataset)
+      end
     else
-      eval.evaluateClusterer(@dataset)
+      eval.evaluateClusterer(args[0])
     end
+    puts 'performing evaluation'
     eval.clusterResultsToString
   end 
 

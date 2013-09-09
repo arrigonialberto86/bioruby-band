@@ -48,7 +48,7 @@ module Lazy_utils
       eval.summary 
     else
       eval = Weka::Classifier::Evaluation.new @dataset
-      eval.crossValidateModel(self.class.ancestors[1].new, self.class.data, fold.to_java(:int), Random.new(1))
+      eval.crossValidateModel(self.class.ancestors[1].new, @dataset, fold.to_java(:int), Random.new(1))
       eval.summary
     end
   end

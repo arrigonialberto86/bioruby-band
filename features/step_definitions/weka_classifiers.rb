@@ -30,11 +30,12 @@ Then(/^I want to print a summary for the dataset$/) do
 end
 
 Then(/^I want to set the class index for attribute with index "(.*?)"$/) do |arg1|
-    My_classifier.set_class_index(arg1.to_i)
+  My_classifier.set_class_index(arg1.to_i)
 end
 
 Then(/^I want to instantiate the classifier for my use$/) do
-  My_classifier.new
+  classifier = My_classifier.new
+  classifier.cross_validate(2)
 end
 
 

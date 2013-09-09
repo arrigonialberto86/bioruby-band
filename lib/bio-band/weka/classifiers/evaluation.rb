@@ -1,13 +1,12 @@
 module Weka
-	module Classifier
-		java_import 'weka.classifiers.Evaluation'
-    java_import 'java.util.Random'
+  module Classifier
+    java_import 'weka.classifiers.Evaluation'
 
-		class Evaluation
-			def summary
-				toSummaryString
-			end
-		end
+    class Evaluation
+      def summary
+        toSummaryString
+      end
+    end
     
-	end
+  end
 end

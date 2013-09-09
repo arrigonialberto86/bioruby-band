@@ -7,4 +7,5 @@ require "java"
 require "bio-band/core"
 require "bio-band/weka"
 require "bio-band/apache"
+java_import 'java.util.Random'
 

@@ -244,13 +244,15 @@ module Core
         end
         summary << att_types
 
-        puts summary
+        display = []
+        display << summary
 
         unless enumerate_instances.nil?
           count=0
           enumerateInstances.each {|inst| count=count+1}
-          puts "\nNumber of rows: #{count}"
-        end 
+          display << "\nNumber of rows: #{count}"
+        end
+        display 
       end
 
       # Merges two sets of Instances together. The resulting set will have all the
@@ -321,7 +323,7 @@ module Core
       # Return a json String for the current Instances object
       # The output is modeled on the 'datatable' Google charts APIs 
       # More details at: 'https://developers.google.com/chart/interactive/docs/reference#DataTable'
-      def to_json
+      def to_json_format
         dataset_hash = Hash.new
         dataset_hash[:cols] = enumerateAttributes.collect {|attribute| attribute.name}
         dataset_hash[:rows] = enumerateInstances.collect {|instance| instance.toString} 

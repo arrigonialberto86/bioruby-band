@@ -61,6 +61,10 @@ module Core
         enumerate_instances.each {|inst| yield(inst)}
       end
 
+      def each_row_with_index
+        enumerate_instances.each_with_index {|inst,id| yield(inst,id)}
+      end
+
       def each_column
         enumerate_attributes.each {|attribute| yield(attribute)}
       end
@@ -226,7 +230,7 @@ module Core
         summary = Ruport::Data::Table::new
         summary.add_column 'Attributes'
         enumerateAttributes.each_with_index do |att,idx| 
-          summary.add_column idx+1
+          summary.add_column idx
         end
  
         att_names = ['Names']

@@ -69,6 +69,10 @@ module Core
         enumerate_attributes.each {|attribute| yield(attribute)}
       end
 
+      def each_column_with_index
+        enumerate_attributes.each_with_index {|attribute,id| yield(attribute,id)}
+      end
+
       # Check if this instance's attributes are all Numeric
       def check_numeric_instance
         enumerateAttributes.each do |att|

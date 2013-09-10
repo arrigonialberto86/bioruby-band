@@ -27,6 +27,10 @@ module Weka
 
         class AddCluster
           include Unsupervised_Util
+          alias_method :clusterer, :set_clusterer
+          def set_clusterer(index)
+            set_clusterer(index)
+          end
         end
 
   			class Center

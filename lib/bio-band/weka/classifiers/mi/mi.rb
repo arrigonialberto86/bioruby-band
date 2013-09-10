@@ -4,6 +4,7 @@ require 'mi_utils'
 module Weka
 	module Classifier
 		module Mi
+      #This module contains classifiers from the 'weka.classifiers.mi' package
       java_import 'weka.classifiers.mi.CitationKNN'
       java_import 'weka.classifiers.mi.MDD'
       java_import 'weka.classifiers.mi.MIBoost'

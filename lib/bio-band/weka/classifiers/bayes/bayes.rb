@@ -3,6 +3,7 @@ require 'bayes_utils'
 
 module Weka
   module Classifier
+    #This module stores the classifiers from the 'weka.classifiers.bayes' package
     module Bayes
       java_import "weka.classifiers.bayes.NaiveBayes"
       java_import "weka.classifiers.bayes.BayesianLogisticRegression"

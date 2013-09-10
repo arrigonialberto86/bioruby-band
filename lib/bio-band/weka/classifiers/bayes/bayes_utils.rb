@@ -16,10 +16,12 @@ module Bayes_utils
     build_classifier(@dataset)
   end
 
+  # set data for instance classifier
   def set_data(data)
     @dataset = data 
   end
 
+  # set class index for the input dataset
   def set_class_index(class_index)
     @class_index = class_index 
   end
@@ -29,6 +31,7 @@ module Bayes_utils
     base.extend(ClassMethods)
   end
 
+  # set classifier options
   def set_options(options)
     options_inst = Utils.splitOptions(options)
     setOptions(options_inst)
@@ -38,10 +41,14 @@ module Bayes_utils
     listOptions.map {|key| "#{key.synopsis} #{key.description}"}.join("\n")
   end
 
+  # return the description reported in the Weka Java doc
   def description
     globalInfo
   end
 
+  # perform crossvalidation on a trained classifier
+  #ARGV:
+  #fold -> 'int' value
   def cross_validate(fold)
     if self.class.data
       eval = Weka::Classifier::Evaluation.new self.class.data

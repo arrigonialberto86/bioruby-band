@@ -2,6 +2,7 @@ $:.unshift File.dirname(__FILE__)
 require 'clusterers_utils'
 
 module Weka
+  #This module contains the clusterers from the 'weka.clusterers' package
 	module Clusterer
     java_import 'weka.clusterers.SimpleKMeans'
     java_import 'weka.clusterers.FarthestFirst'

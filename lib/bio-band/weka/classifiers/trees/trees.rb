@@ -3,6 +3,7 @@ require 'trees_utils'
 
 module Weka
 	module Classifier
+    #This module contains classifiers from the 'weka.classifiers.trees' package
 		module Trees
       java_import 'weka.classifiers.trees.J48'
       java_import 'weka.classifiers.trees.FT'

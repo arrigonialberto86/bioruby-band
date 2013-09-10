@@ -20,10 +20,14 @@ module Mi_utils
     build_classifier(@dataset)
   end
 
+  #Set input data for the selected classifier
+  #ARGV:
+  #data -> an Instances class object
   def set_data(data)
     @dataset = data 
   end
 
+  #Set class index for the input dataset
   def set_class_index(class_index)
     @class_index = class_index 
   end
@@ -33,14 +37,19 @@ module Mi_utils
     setOptions(options_inst)
   end
 
+  #List options for the selected classifier
   def list_options
     listOptions.each {|key| puts "#{key.synopsis} #{key.description}"}
   end
 
+  #Return a short description for the current classifier
   def description
     puts globalInfo
   end
 
+  # perform crossvalidation on a trained classifier
+  #ARGV:
+  #fold -> 'int' value
   def cross_validate(fold)
     if self.class.data
       eval = Weka::Classifier::Evaluation.new self.class.data

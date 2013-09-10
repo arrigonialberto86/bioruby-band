@@ -3,6 +3,7 @@ require 'functions_utils'
 
 module Weka
 	module Classifier
+    #This module stores the classifiers from the 'weka.classifiers.functions' package
 		module Functions
       java_import 'weka.classifiers.functions.LinearRegression'
       java_import 'weka.classifiers.functions.PLSClassifier'

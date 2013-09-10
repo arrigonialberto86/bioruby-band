@@ -20,14 +20,21 @@ module Trees_utils
     build_classifier(@dataset)
   end
 
+  #Set input data for the selected classifier
+  #ARGV:
+  #data -> an Instances class object
   def set_data(data)
     @dataset = data 
   end
 
+  #Set the class index for the input dataset
   def set_class_index(class_index)
     @class_index = class_index 
   end
 
+  #Set options for the instance classifier
+  #ARGS:
+  #options -> A String object, i.e. "-K 3"
   def set_options(options)
     options_inst = Utils.splitOptions(options)
     setOptions(options_inst)
@@ -37,10 +44,14 @@ module Trees_utils
     listOptions.each {|key| puts "#{key.synopsis} #{key.description}"}
   end
 
+  #Return a short description for the selected classifier
   def description
     puts globalInfo
   end
 
+  # perform crossvalidation on a trained classifier
+  #ARGV:
+  #fold -> 'int' value
   def cross_validate(fold)
     if self.class.data
       eval = Weka::Classifier::Evaluation.new self.class.data

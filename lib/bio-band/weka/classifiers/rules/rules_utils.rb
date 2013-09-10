@@ -20,14 +20,21 @@ module Rules_utils
     build_classifier(@dataset)
   end
 
+  #Set data for instance classifier
+  #ARGV
+  # data -> an Instances object
   def set_data(data)
     @dataset = data 
   end
-
+  
+  #Set a class index for the input dataset
   def set_class_index(class_index)
     @class_index = class_index 
   end
 
+  #Set options for the selected classifier
+  #ARGS:
+  #options -> a String, i.e. "-K 3"
   def set_options(options)
     options_inst = Utils.splitOptions(options)
     setOptions(options_inst)
@@ -41,6 +48,9 @@ module Rules_utils
     puts globalInfo
   end
 
+  # perform crossvalidation on a trained classifier
+  #ARGV:
+  #fold -> 'int' value
   def cross_validate(fold)
     if self.class.data
       eval = Weka::Classifier::Evaluation.new self.class.data

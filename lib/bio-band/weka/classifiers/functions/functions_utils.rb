@@ -20,10 +20,12 @@ module Functions_utils
     build_classifier(@dataset)
   end
 
+  #Set instance data for the instance classifier
   def set_data(data)
     @dataset = data 
   end
 
+  #Set a class index for the input dataset
   def set_class_index(class_index)
     @class_index = class_index 
   end
@@ -33,14 +35,19 @@ module Functions_utils
     setOptions(options_inst)
   end
 
+  #List available options
   def list_options
     listOptions.map {|key| "#{key.synopsis} #{key.description}"}.join("\n")
   end
 
+  #Return a description from the Weka Javadoc for the selected classifier
   def description
     puts globalInfo
   end
 
+  # perform crossvalidation on a trained classifier
+  #ARGV:
+  #fold -> 'int' value
   def cross_validate(fold)
     if self.class.data
       eval = Weka::Classifier::Evaluation.new self.class.data

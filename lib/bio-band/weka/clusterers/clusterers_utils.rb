@@ -20,10 +20,12 @@ module Clusterer_utils
     base.extend(ClassMethods)
   end
 
+  #set instance data for the clusterer
   def set_data(data)
     @dataset = data 
   end
 
+  #set options for the clusterer
   def set_options(options)
     options_inst = Utils.splitOptions(options)
     setOptions(options_inst)
@@ -33,14 +35,17 @@ module Clusterer_utils
     listOptions.map {|key| "#{key.synopsis} #{key.description}"}.join("\n")
   end
 
+  #the description provided by the Weka Documentation
   def description
     globalInfo
   end
 
+  #list cluster centroids with coordinates
   def get_centroids 
     getClusterCentroids
   end
 
+  #list cluster's capabilities with attributes (i.e Numeric, Nominal...)
   def list_capabilities
     get_capabilities.to_s
   end

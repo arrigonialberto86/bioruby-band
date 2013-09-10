@@ -5,7 +5,6 @@
 require 'sinatra/base'
 require 'bio-band'
 require 'JSON'
-#java_import 'java.util.Random'
 
 class Trial < Sinatra::Base
   use Rack::Session::Pool

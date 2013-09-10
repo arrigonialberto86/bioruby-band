@@ -3,6 +3,7 @@ require 'attribute_selection_utils'
 
 module Weka
   module Attribute_selection
+    #This module contains search algorithms from the 'weka.attributeSelection' packages
     module Search
       
       java_import 'weka.attributeSelection.GreedyStepwise'

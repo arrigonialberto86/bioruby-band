@@ -32,15 +32,10 @@ end
 
 Then(/^I want to evaluate the performance of the classifier on the test set$/) do
   @evaluator = Weka::Classifier::Evaluation.new $filtered_training_set
-  $test_set.set_class_index 0
-  @evaluator.evaluate_model($bayes,$test_set)
+  @evaluator.evaluate_model($bayes,$filtered_test_set)
 end
 
 Then(/^I want want to print to stdout a summary of the evaluation$/) do
   puts @evaluator.summary
 end
 
-
-Then(/^I want to perform cross\-validation on the trained classifier$/) do
-  pending # express the regexp above with the code you wish you had
-end

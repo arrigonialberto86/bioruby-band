@@ -5,7 +5,7 @@
 
 Gem::Specification.new do |s|
   s.name = "bio-band"
-  s.version = "0.1.4"
+  s.version = "0.1.5"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["arrigonialberto86"]
@@ -45,6 +45,7 @@ Gem::Specification.new do |s|
     "features/step_definitions/weka_clustering.rb",
     "features/step_definitions/weka_filters.rb",
     "features/step_definitions/weka_parsers.rb",
+    "features/step_definitions/weka_pipeline.rb",
     "features/support/env.rb",
     "features/weka_classifiers.feature",
     "features/weka_clustering.feature",
@@ -91,6 +92,8 @@ Gem::Specification.new do |s|
     "lib/bio-band/weka/filters/unsupervised/attribute/attribute.rb",
     "lib/bio-band/weka/filters/unsupervised/instance/instance.rb",
     "lib/bio-band/weka/filters/unsupervised/unsupervised_utils.rb",
+    "resources/ReutersGrain-test.arff",
+    "resources/ReutersGrain-train.arff",
     "resources/weather.csv",
     "resources/weather.numeric.arff",
     "spec/bio-band_spec.rb",

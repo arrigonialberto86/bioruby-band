@@ -8,6 +8,7 @@ Feature: Classification pipeline
 		Then I want to parse them
 		And I want to filter them using the unsupervised filter "StringToWordVector"
 		And I want to build a "NaiveBayes" classifier using training set data
-		And I want to evaluate the performance of the classifier on the test test
-		And I want want to print to stdout a "summary" for the evaluation
+		And I want to evaluate the performance of the classifier on the test set
+		And I want want to print to stdout a summary of the evaluation
+
 		

@@ -21,8 +21,13 @@ module Unsupervised_Util
     globalInfo
   end
 
-  def use
-    Filter.useFilter(@input,self)
+  # *args is an optional Instances data object
+  def use(*args)
+    if args[0]
+      Filter.useFilter(args[0],self)
+    else
+      Filter.useFilter(@input,self)
+    end
   end
 
   def set(&block)

@@ -3,7 +3,7 @@ Given(/^the ARFF dataset stored in the file "(.*?)"$/) do |arg1|
 end
 
 Given(/^the SimpleKMeans algorithm implementation from Weka$/) do
-  @clusterer = Weka::Classifier::Bayes::NaiveBayes.new
+  @clusterer = Weka::Clusterer::SimpleKMeans.new
 end
 
 Then(/^I want to parse the data from the file$/) do

@@ -1,6 +1,5 @@
 module Supervised_Util
   java_import "weka.core.Utils"
-  java_import "weka.filters.Filter"
 
   #Instance methods list
   def options_list
@@ -21,8 +20,13 @@ module Supervised_Util
     globalInfo
   end
 
-  def use
-    Filter.useFilter(@input,self)
+  # *args is an optional Instances data object
+  def use(*args)
+    if args[0]
+      Filter.useFilter(args[0],self)
+    else
+      Filter.useFilter(@input,self)
+    end
   end
 
   def set(&block)

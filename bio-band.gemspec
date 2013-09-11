@@ -5,7 +5,7 @@
 
 Gem::Specification.new do |s|
   s.name = "bio-band"
-  s.version = "0.1.3"
+  s.version = "0.1.4"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["arrigonialberto86"]
@@ -28,11 +28,14 @@ Gem::Specification.new do |s|
     "Rakefile",
     "VERSION",
     "band_server/client.rb",
+    "band_server/client_alt.rb",
     "band_server/first_dataset.csv",
     "band_server/second_dataset.csv",
     "band_server/simple_server.rb",
+    "band_server/third_dataset.csv",
     "band_server/uploads/first_dataset.csv",
     "band_server/uploads/second_dataset.csv",
+    "band_server/uploads/third_dataset.csv",
     "bin/bio-band",
     "bio-band.gemspec",
     "ext/mkrf_conf.rb",
@@ -91,7 +94,11 @@ Gem::Specification.new do |s|
     "resources/weather.csv",
     "resources/weather.numeric.arff",
     "spec/bio-band_spec.rb",
-    "spec/spec_helper.rb"
+    "spec/spec_helper.rb",
+    "test/helper.rb",
+    "test/test_apacheCorrelation.rb",
+    "test/test_apacheInference.rb",
+    "test/test_bio-band.rb"
   ]
   s.homepage = "http://github.com/arrigonialberto86/bioruby-band"
   s.licenses = ["MIT"]

@@ -61,6 +61,7 @@ module Apache
         end
       end    
 
+      # Compare two datasets stored in Ruby Arrays
       def self.chi_square_dataset_compare(observed1,observed2)
         obj = ChiSquareTest.new
         val = obj.chiSquareDataSetsComparison(observed1.to_java(:long),observed2.to_java(:long)) 
@@ -68,12 +69,17 @@ module Apache
         return val,p_value          
       end
 
-      def mann_whitney_u(array1,array2)
+      # An implementation of the Mann-Whitney U test 
+      # (also called Wilcoxon rank-sum test)
+      # * *Args*    :
+      #   - +Array1+ -> must be a RubyArray.
+      #   - +Array2+ -> must be a RubyArray.
+      def self.mann_whitney_u(array1,array2)
         obj = MannWhitneyUTest.new
-        first = array_1.to_java :double
-        second = array_2.to_java :double 
-        value = mannWhitneyU first,second
-        p_value = mannWhitneyUTest first,second
+        first = array1.to_java :double
+        second = array2.to_java :double 
+        value = obj.mannWhitneyU first,second
+        p_value = obj.mannWhitneyUTest first,second
         return value,p_value
       end
 

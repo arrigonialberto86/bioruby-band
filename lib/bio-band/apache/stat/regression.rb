@@ -2,7 +2,7 @@ require 'java'
 
 module Apache
   module Stat
-  	module Regression
+    module Regression
       java_import "org.apache.commons.math3.stat.regression.SimpleRegression"
 
       # Create a simple regression model on the input data 
@@ -17,6 +17,6 @@ module Apache
       end
 
 
-  	end
+    end
   end
 end

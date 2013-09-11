@@ -9,6 +9,11 @@ module Weka
       java_import 'weka.attributeSelection.GreedyStepwise'
       java_import 'weka.attributeSelection.RankSearch'
       java_import 'weka.attributeSelection.Ranker'
+      java_import 'weka.attributeSelection.ExhaustiveSearch'
+      java_import 'weka.attributeSelection.GeneticSearch'
+      java_import 'weka.attributeSelection.RaceSearch'
+      java_import 'weka.attributeSelection.RandomSearch'
+      java_import 'weka.attributeSelection.ScatterSearchV1'
 
       class GreedyStepwise
         include Attribute_selection_Utils 
@@ -19,6 +24,26 @@ module Weka
       end
 
       class RankSearch
+        include Attribute_selection_Utils 
+      end
+
+      class ExhaustiveSearch
+        include Attribute_selection_Utils 
+      end
+
+      class GeneticSearch
+        include Attribute_selection_Utils 
+      end
+
+      class RaceSearch
+        include Attribute_selection_Utils 
+      end
+
+      class RandomSearch
+        include Attribute_selection_Utils 
+      end
+
+      class ScatterSearchV1
         include Attribute_selection_Utils 
       end
 

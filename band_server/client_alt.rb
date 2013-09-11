@@ -4,8 +4,8 @@ require 'uri'
 address = 'http://localhost:4567/'
 
 response_old = RestClient.post "#{address}create_dataset", { 'first' => { 'dataset' => File.new('first_dataset.csv'),'dataset_name' => 'dataset_1'}, 
-                                                             'second' => {'dataset' => File.new('second_dataset.csv'),'dataset_name' => 'dataset_2'} }
-
+                                                             #'second' => {'dataset' => File.new('second_dataset.csv'),'dataset_name' => 'dataset_2'}, 
+															 'third' => {'dataset' => File.new('third_dataset.csv'),'dataset_name' => 'dataset_3'} }
 
 puts 'List of the parsed datasets:'
 response_list =  RestClient.get "#{address}datasets", :cookies => response_old.cookies

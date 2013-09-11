@@ -10,15 +10,27 @@ class Trial < Sinatra::Base
   use Rack::Session::Pool
 
   # list created datasets or classifiers
-  get '/list/:data_class' do
-    session[params[:data_class]].keys.join(",\t")
+  # get '/list/:data_class' do
+  #   session[params[:data_class]].keys.join(",\t")
+  # end
+
+  get '/datasets' do
+    session[:datasets].keys.join(",\t")
+  end
+  get '/classifiers' do
+    session[:classifiers].keys.join(",\t")
   end
 
   # return a dataset using Json format
-  get '/show_dataset/:dataset_in' do
+  get '/datasets/:dataset_in' do
     # force session to start by writing in the Hash ## ODDDDD
     session[:init] = true
     session[:datasets][params[:dataset_in]].to_json_format
+  end
+
+  get '/classifiers/:classifier_in' do
+    session[:init] = true
+    session[:classifiers][params[:classifier_in]]
   end
 
   get '/summary/:dataset_in' do

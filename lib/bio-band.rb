@@ -7,5 +7,6 @@ require "java"
 require "bio-band/core"
 require "bio-band/weka"
 require "bio-band/apache"
+Random.ancestors[1].instance_eval {remove_const :Random} if defined?(Random)
 java_import 'java.util.Random'
 

@@ -2,28 +2,28 @@ require 'java'
 
 module Apache
   module Stat
-  	module Inference
+    module Inference
 
-  		java_import 'org.apache.commons.math3.stat.inference.ChiSquareTest'
-  		java_import 'org.apache.commons.math3.stat.inference.MannWhitneyUTest'
-  		java_import 'org.apache.commons.math3.stat.inference.OneWayAnova'
-  		java_import 'org.apache.commons.math3.stat.inference.TTest'
-  		java_import 'org.apache.commons.math3.stat.inference.WilcoxonSignedRankTest'
-  		java_import 'org.apache.commons.math3.stat.StatUtils'
+      java_import 'org.apache.commons.math3.stat.inference.ChiSquareTest'
+      java_import 'org.apache.commons.math3.stat.inference.MannWhitneyUTest'
+      java_import 'org.apache.commons.math3.stat.inference.OneWayAnova'
+      java_import 'org.apache.commons.math3.stat.inference.TTest'
+      java_import 'org.apache.commons.math3.stat.inference.WilcoxonSignedRankTest'
+      java_import 'org.apache.commons.math3.stat.StatUtils'
       java_import 'java.util.ArrayList'
-  		
+      
       # An implementation of the Wilcoxon signed-rank test
       # * *Args*    :
       #   - +Array1+ -> must be a RubyArray.
       #   - +Array2+ -> must be a RubyArray.
-  		def self.wilcoxon_test(array_1,array_2)
-  			obj = WilcoxonSignedRankTest.new
+      def self.wilcoxon_test(array_1,array_2)
+        obj = WilcoxonSignedRankTest.new
         first = Core::Utils::double_to_a(array_1)
         second = Core::Utils::double_to_a(array_2)
-  			val = obj.wilcoxonSignedRank first, second
+        val = obj.wilcoxonSignedRank first, second
         p_val = obj.wilcoxonSignedRankTest first, second, true.to_java(:boolean) 
-  			return val,p_val
-  		end
+        return val,p_val
+      end
 
       # Utility class called by 'chi_square' method in this same package
       class Chi_square
@@ -140,6 +140,6 @@ module Apache
         p_value = obj.anovaPValue(collection)
         return f_value,p_value
       end
-  	end
+    end
   end
 end

@@ -68,6 +68,7 @@ GEM
 
 PLATFORMS
   java
+  ruby
 
 DEPENDENCIES
   bio (>= 1.4.2)

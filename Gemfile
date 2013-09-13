@@ -3,10 +3,13 @@ source "http://rubygems.org"
 # Example:
 #   gem "activesupport", ">= 2.3.5"
 
-gem "jbundler"
-gem "ruport"
-gem "cucumber"
-gem "json"
+platforms :jruby do
+  gem "rake"
+  gem "bio", ">= 1.4.2"
+  gem "jbundler"
+  gem "ruport"
+  gem "json"
+end
 
 # Add dependencies to develop your gem here.
 # Include everything needed to run rake, tests, features, etc.
@@ -17,10 +20,9 @@ group :development do
   gem "bundler", "~> 1.3.5"
   gem "jeweler", "~> 1.8.4"
   gem "simplecov", ">= 0"
-  gem "jbundler"
-  gem "ruport"
+#  gem "jbundler"
+#  gem "ruport"
   gem "cucumber"
   gem "rspec"
-  gem "json"
-  gem "bio", ">= 1.4.2"
+#  gem "json"
 end

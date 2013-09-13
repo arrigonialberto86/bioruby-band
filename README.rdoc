@@ -4,7 +4,7 @@ Data mining and machine learning algorithms for Ruby
 
 == Installation
 
-Install 'bundle' for JRuby before trying to install the 'bio-band' gem.
+Install the  'jbundle' gem and 'bundle' for JRuby before trying to install the 'bio-band' gem.
 Maven is also required for .jars automatic download and installation. On
 Ubuntu/Debian Maven should already be installed and on OSX system you can get
 it from Brew

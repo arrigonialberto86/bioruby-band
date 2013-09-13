@@ -9,11 +9,6 @@ require 'JSON'
 class Trial < Sinatra::Base
   use Rack::Session::Pool
 
-  # list created datasets or classifiers
-  # get '/list/:data_class' do
-  #   session[params[:data_class]].keys.join(",\t")
-  # end
-
   get '/datasets' do
     session[:datasets].keys.join(",\t")
   end

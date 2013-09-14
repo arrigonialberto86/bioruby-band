@@ -4,6 +4,8 @@ source "http://rubygems.org"
 #   gem "activesupport", ">= 2.3.5"
 
 platforms :jruby do
+  gem "i18n", "0.6.1"
+  gem "activesupport", "3.2.13"
   gem "rake"
   gem "bio", ">= 1.4.2"
   gem "jbundler", "0.4.3"

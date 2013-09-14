@@ -6,7 +6,7 @@ source "http://rubygems.org"
 platforms :jruby do
   gem "rake"
   gem "bio", ">= 1.4.2"
-  gem "jbundler"
+  gem "jbundler", "0.4.3"
   gem "ruport"
   gem "json"
   gem "multi_json"

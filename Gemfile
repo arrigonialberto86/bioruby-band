@@ -4,11 +4,17 @@ source "http://rubygems.org"
 #   gem "activesupport", ">= 2.3.5"
 
 platforms :jruby do
+  gem "atomic"
   gem "rake"
   gem "bio", ">= 1.4.2"
+  gem "i18n", "0.6.1"
   gem "jbundler"
   gem "ruport"
   gem "json"
+  gem "multi_json"
+  gem "activesupport"
+  gem "gherkin"
+  gem "git"
 end
 
 # Add dependencies to develop your gem here.
@@ -20,9 +26,6 @@ group :development do
   gem "bundler", "~> 1.3.5"
   gem "jeweler", "~> 1.8.4"
   gem "simplecov", ">= 0"
-#  gem "jbundler"
-#  gem "ruport"
   gem "cucumber"
   gem "rspec"
-#  gem "json"
 end

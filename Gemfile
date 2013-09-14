@@ -4,15 +4,12 @@ source "http://rubygems.org"
 #   gem "activesupport", ">= 2.3.5"
 
 platforms :jruby do
-  gem "atomic"
   gem "rake"
   gem "bio", ">= 1.4.2"
-  gem "i18n", "0.6.1"
   gem "jbundler"
   gem "ruport"
   gem "json"
   gem "multi_json"
-  gem "activesupport"
   gem "gherkin"
   gem "git"
 end

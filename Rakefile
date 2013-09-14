@@ -26,12 +26,23 @@ Jeweler::Tasks.new do |gem|
 end
 Jeweler::RubygemsDotOrgTasks.new
 
+require 'cucumber/rake/task'
+Cucumber::Rake::Task.new(:features)
+
 require 'rake/testtask'
 Rake::TestTask.new(:test) do |test|
   test.libs << 'lib' << 'test'
 #  test.pattern = 'test/**/test_*.rb'
   test.test_files = FileList['test/test_*.rb']
   test.verbose = true
+end
+
+task :test => [] do
+  begin
+    Rake::Task[:test].invoke
+  rescue
+  end
+  Rake::Task[:features].invoke
 end
 
 #require 'rcov/rcovtask'

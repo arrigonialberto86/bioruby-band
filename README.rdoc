@@ -1,5 +1,8 @@
 = bio-band
 
+{<img
+src="https://travis-ci.org/arrigonialberto86/bioruby-band.png"/>}[http://travis-ci.org/#!/arrigonialberto86/bioruby-band]
+
 Data mining and machine learning algorithms for Ruby
 
 == Installation

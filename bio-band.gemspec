@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = "bio-band"
-  s.version = "0.1.9"
+  s.version = "0.1.11"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["arrigonialberto86"]
-  s.date = "2013-09-14"
+  s.date = "2013-09-16"
   s.description = "Data mining and machine learning algorithms for JRuby "
   s.email = "arrigonialberto86@gmail.com"
   s.executables = ["bio-band"]
@@ -19,6 +19,7 @@ Gem::Specification.new do |s|
     "README.rdoc"
   ]
   s.files = [
+    ".travis.yml",
     "Gemfile",
     "Gemfile.lock",
     "Jarfile",
